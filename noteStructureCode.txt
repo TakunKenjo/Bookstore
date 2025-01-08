@@ -1,0 +1,27 @@
+>assets
+    >uploads
+        Chứa các hình ảnh mới (như hình ảnh sản phẩm mới)
+    >img
+        Chứa các hình ảnh ở khía cạnh tĩnh (như logo)
+    >css
+        Chứa các file css
+    >js
+        Chứa các file javascript
+        validate(kiểm tra ràng buộc dữ liệu trên giao diện)+ajax gửi dữ liệu tới controller
+>config
+    Cấu hình
+>controller
+    Chia theo module, dùng xử lý business logic và gọi model
+    Trả về response/ nhận request về view qua ajax
+>include
+    Chứa các file giao diện lặp lại như: header, navbar, footer, filter
+>lib
+    connect.php
+    session.php
+>model
+    Chia theo Object, các hàm tương tác với CSDL, chia file theo đối tượng
+    Cho controller gọi hàm
+    include trong controller
+>view
+    >customer
+    >admin

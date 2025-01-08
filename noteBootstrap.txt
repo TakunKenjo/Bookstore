@@ -1,0 +1,4 @@
+class="Container" -> Set kích thước cho phần hiển thị căn lề trái, phải
+
+Thành phần (header, section,...)-> Container -> Row -> Col
+

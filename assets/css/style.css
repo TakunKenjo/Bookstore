@@ -1,0 +1,61 @@
+/* header-toptop*/
+.header-top {
+    display: flex;
+    justify-content: flex-end; /* Canh nội dung sang bên phải */
+    padding: 3px 5px; /* Thêm khoảng cách */
+  }
+  
+  .header-top ul {
+    list-style: none; /* Xóa dấu đầu dòng */
+    display: flex;
+    gap: 15px; /* Khoảng cách giữa các phần tử */
+    margin: 0;
+    padding: 0;
+    opacity: 0.4;
+  }
+  
+  .header-top ul li a {
+    text-decoration: none; /* Xóa gạch chân */
+    color: black;
+  }
+  /* Navbar */
+.navbar .input-search {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width:350px;
+}
+.navbar .btn-search {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.navbar .input-search:focus {
+    outline: none; /* Loại bỏ outline mặc định */
+    border-right: none; /* Loại bỏ viền bên phải */
+    box-shadow: none; /* Loại bỏ bóng đổ nếu có */
+}
+/* Sản phẩm nổi bật */
+.card-body {
+    padding-bottom: 0; /* Loại bỏ padding ở dưới cùng của card body */
+}
+
+.card-body h5 {
+    margin-bottom: 0.5rem; /* Giảm khoảng cách dưới tiêu đề */
+}
+
+.list-group-item {
+    padding-top: 0.25rem; /* Giảm khoảng cách phía trên của mỗi item trong list */
+    padding-bottom: 0.25rem; /* Giảm khoảng cách phía dưới của mỗi item trong list */
+}
+.card-body h5 {
+    white-space: nowrap;        /* Ngăn văn bản xuống dòng */
+    overflow: hidden;           /* Ẩn phần vượt quá */
+    text-overflow: ellipsis;    /* Thêm dấu ba chấm (...) khi văn bản vượt quá */
+    width: 100%;                /* Đảm bảo thẻ h5 chiếm hết chiều rộng */
+}
+.card img {
+    width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng của thẻ card */
+    height: 300px; /* Đặt chiều cao cố định cho ảnh */
+    object-fit: cover; /* Giữ tỉ lệ ảnh mà không bị kéo dài hoặc biến dạng */
+    border-radius: 10px; /* Bo góc ảnh để tạo hiệu ứng mềm mại */
+    object-position: center; /* Đảm bảo ảnh luôn được căn chỉnh ở giữa nếu ảnh không khớp với kích thước */
+}

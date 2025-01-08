@@ -1,0 +1,22 @@
+/* Change color of page numbers */
+.pagination .page-link {
+    color: #28a745; /* Success color (green), replace with your preferred color */
+  }
+  
+  /* Change color of icons (arrows) */
+  .pagination .page-link i {
+    color: #28a745; /* Green for icons, replace with your preferred color */
+  }
+  
+  /* Optional: Change color when the page link is hovered over */
+  .pagination .page-link:hover {
+    color: white; /* Text color when hovered */
+    background-color: #28a745; /* Background color on hover */
+  }
+  
+  /* Optional: Change color for the active page */
+  .pagination .page-item.active .page-link {
+    color: white;
+    background-color: #28a745; /* Active page background color */
+  }
+  
