@@ -1,0 +1,9 @@
+.table-responsive {
+    max-height: 635px;
+    overflow-y: auto;   
+}
+
+/* Ẩn thanh cuộn dọc */
+.table-responsive::-webkit-scrollbar {
+    display: none;  
+}
