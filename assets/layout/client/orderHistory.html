@@ -17,7 +17,7 @@
 
 </head>
 <body class="bg-light">
-    <header class="border-bottom">
+    <header>
         <!-- Header top -->
         <div class="header-top bg-body-secondary">
         <div class="container">
@@ -34,7 +34,7 @@
         </div>
     <!-- Header top end -->
     <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary small ">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary small">
             <div class="container">
               <!-- Navbar brand -->
               <a class="navbar-brand" href="/assets/layout/client/index.html">
@@ -46,10 +46,10 @@
               <div class="collapse navbar-collapse ms-5" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-normal ">
                   <li class="nav-item me-3">
-                    <a class="nav-link " aria-current="page" href="/assets/layout/client/index.html">TRANG CHỦ</a>
+                    <a class="nav-link active" aria-current="page" href="/assets/layout/client/index.html">TRANG CHỦ</a>
                   </li>
                   <li class="nav-item me-3">
-                    <a class="nav-link active " aria-current="page" href="#">SÁCH</a>
+                    <a class="nav-link " aria-current="page" href="/assets/layout/client/product.html">SÁCH</a>
                   </li>
                   <li class="nav-item me-3">
                     <a class="nav-link " aria-current="page" href="#">LIÊN HỆ</a>
@@ -64,14 +64,23 @@
                   <button class="btn-search icon-search btn btn-success d-flex align-items-center me-3" type="submit">
                     <svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
                   </button>
-                  <!-- logo cartcart -->
-                  <button class="cart-icon btn btn-success d-flex align-items-center rounded-5 me-3" type="submit">
-                    <svg height="16px" width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>   
-                  </button>
-                    <!-- logo user -->
-                  <a href="/assets/layout/client/orderHistory.html" class="user-icon btn btn-success d-flex align-items-center rounded-5  " type="submit">
-                    <svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/></svg>
+                  <!-- logo cart -->
+                  <a href="/assets/layout/client/cart.html" class="cart-icon btn btn-success d-flex align-items-center rounded-5 me-3" >
+                    <svg height="16px" width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path fill="#ffffff" d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+                    </svg>
                   </a>
+                  <!-- logo user -->
+                  <div class="nav-item dropdown d-flex align-items-center rounded-5">
+                    <div style="width: 41.6px; height: 37.6px; border-radius: 50%;" class="user-icon btn btn-success d-flex align-items-center rounded-5" data-bs-toggle="dropdown" aria-expanded="false" type="submit">
+                      <svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/></svg>
+                    </div>
+                    <ul class="dropdown-menu" style="margin-left: -120px; margin-top: 10px">
+                      <li><a class="dropdown-item" href="/assets/layout/client/personalInfo.html" style="--bs-dropdown-link-active-bg: #f2ebea; --bs-dropdown-link-active-color: black;">Thông tin cá nhân</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/assets/layout/client/orderHistory.html" style="--bs-dropdown-link-active-bg: #f2ebea; --bs-dropdown-link-active-color: black;">Đơn hàng</a></li>
+                    </ul>                    
+                  </div>
                   
                 </form>
             </div>
@@ -132,10 +141,202 @@
                                     <span class="text-warning">Chờ xác nhận</span>
                                 </td>
                                 <td class="align-middle">
-                                    <button class="btn " fdprocessedid="r9x0b9">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                         <i  class="fa-solid fa-circle-info fs-5 text-black"></i>
                                     </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-xl" >
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Chi tiết đơn hàng</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <!-- col bảng sản phẩm trong đơn hàng -->
+                                                        <div class="col-md-8">
+                                                            <div class="cart-product pb-2 px-2 border rounded-3 shadow bg-white table-responsive">
+                                                                <table class="table">
+                                                                    <thead>
+                                                                      <tr>
+                                                                        <th scope="col" colspan="2" class="text-secondary">Sản phẩm</th>
+                                                                        <th scope="col" class="text-secondary">Đơn giá</th>
+                                                                        <th scope="col" class="text-secondary">Số lượng</th>
+                                                                        <th scope="col" class="text-secondary">Thành tiền</th>
+                                                                        
+                                                                      </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="book-image" scope="row">
+                                                                                <img src="/assets/uploads/spdemo.jpg" style="width:120px" alt="">
+                                                                            </td>
+                                                                            <td class="pe-4 book-name ps-0 align-middle fw-medium" style="max-width: 150px; word-wrap: break-word;">
+                                                                                Pháp Y Tống Từ  
+                                                                            </td>
+                                                                            <td class="align-middle opacity-75">
+                                                                                100.000đ
+                                                                            </td>                                             
+                                                                            <td class="quantity align-middle opacity-75" ">
+                                                                                6
+                                                                            </td>
+                                                                            <td class="book-price align-middle">
+                                                                                <span class="price-text">
+                                                                                    <span class="price fw-medium">299.000đ</span>
+                                                                                </span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="book-image" scope="row">
+                                                                                <img src="/assets/uploads/spdemo.jpg" style="width:120px" alt="">
+                                                                            </td>
+                                                                            <td class="pe-4 book-name ps-0 align-middle fw-medium" style="max-width: 150px; word-wrap: break-word;">
+                                                                                Pháp Y Tống Từ  
+                                                                            </td>
+                                                                            <td class="align-middle opacity-75">
+                                                                                100.000đ
+                                                                            </td>                                             
+                                                                            <td class="quantity align-middle opacity-75" ">
+                                                                                6
+                                                                            </td>
+                                                                            <td class="book-price align-middle">
+                                                                                <span class="price-text">
+                                                                                    <span class="price fw-medium">299.000đ</span>
+                                                                                </span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="book-image" scope="row">
+                                                                                <img src="/assets/uploads/spdemo.jpg" style="width:120px" alt="">
+                                                                            </td>
+                                                                            <td class="pe-4 book-name ps-0 align-middle fw-medium" style="max-width: 150px; word-wrap: break-word;">
+                                                                                Pháp Y Tống Từ  
+                                                                            </td>
+                                                                            <td class="align-middle opacity-75">
+                                                                                100.000đ
+                                                                            </td>                                             
+                                                                            <td class="quantity align-middle opacity-75" ">
+                                                                                6
+                                                                            </td>
+                                                                            <td class="book-price align-middle">
+                                                                                <span class="price-text">
+                                                                                    <span class="price fw-medium">299.000đ</span>
+                                                                                </span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="book-image" scope="row">
+                                                                                <img src="/assets/uploads/spdemo.jpg" style="width:120px" alt="">
+                                                                            </td>
+                                                                            <td class="pe-4 book-name ps-0 align-middle fw-medium" style="max-width: 150px; word-wrap: break-word;">
+                                                                                Pháp Y Tống Từ  
+                                                                            </td>
+                                                                            <td class="align-middle opacity-75">
+                                                                                100.000đ
+                                                                            </td>                                             
+                                                                            <td class="quantity align-middle opacity-75" ">
+                                                                                6
+                                                                            </td>
+                                                                            <td class="book-price align-middle">
+                                                                                <span class="price-text">
+                                                                                    <span class="price fw-medium">299.000đ</span>
+                                                                                </span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        
+                                                                       
+                                                                    </tbody>
+                                                                </table>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        <!-- col thông tin thanh toán -->
+                                                        <div class="col-md-4 ">
+                                                            <!-- Row địa chỉ giao hàng -->
+                                                            <div class="row pe-3">
+                                                                <div class="card border shadow rounded-3 w-auto" style="width: 18rem;">
+                                                                    <ul class="list-group list-group-flush">
+                                                                      <li class="list-group-item fw-bold py-2">Thông tin nhận hàng</li>
+                                                                      <li class="list-group-item">
+                                                                        <div class="mt-2 mb-2 d-flex justify-content-between align-items-center opacity-50 small fw-medium">
+                                                                            <span>Ngô Đức Trọng</span>
+                                                                        </div>
+                                                                        <div class="mb-2 d-flex justify-content-between align-items-center opacity-50 small fw-medium">
+                                                                            <span>0326584557</span>
+                                                                        </div>
+                                                                        <div class="mb-2 d-flex justify-content-between align-items-center opacity-50 small fw-medium">
+                                                                            <span>256 Đồng Khởi, Xã Vĩnh Trường, Huyện An Phú, An Giang</span>
+                                                                        </div>
+                                                                      </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Row thông tin đơn hàng-->
+                                                            <div class="row mt-2 pe-3">
+                                                                <div class="card border shadow rounded-3 w-100" style="width: 18rem;">
+                                                                    <ul class="list-group list-group-flush">
+                                                                      <li class="list-group-item fw-bold py-2">Thông tin đơn hàng</li>
+                                                                      <li class="list-group-item">
+                                                                        <div class="mt-2 mb-2 d-flex justify-content-between align-items-center opacity-50 small fw-medium">
+                                                                            <strong>Mã đơn hàng</strong>
+                                                                            <span>
+                                                                                HD001
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="mt-2 mb-2 d-flex justify-content-between align-items-center opacity-50 small fw-medium">
+                                                                            <strong>Ngày tạo đơn hàng</strong>
+                                                                            <span>
+                                                                                2025-01-07
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="mb-2 d-flex justify-content-between align-items-center opacity-50 small fw-medium">
+                                                                            <strong>Ngày cập nhật</strong>
+                                                                            <span>
+                                                                                2025-01-07
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="mb-2 d-flex justify-content-between align-items-center opacity-50 small fw-medium">
+                                                                            <strong>Phí ship</strong>
+                                                                            <span>
+                                                                                41.000đ
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="mb-2 d-flex justify-content-between align-items-center opacity-50 small fw-medium">
+                                                                            <strong>Phương thức thanh toán</strong>
+                                                                            <span>
+                                                                                Tiền mặt (COD)
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="mb-2 d-flex justify-content-between align-items-center opacity-50 small fw-medium">
+                                                                            <strong>Tổng số lượng sản phẩm</strong>
+                                                                            <span>
+                                                                                6
+                                                                            </span>
+                                                                        </div>
+                                                                      </li>
+                                                                      <li class="list-group-item">
+                                                                        <div class="mb-2 mt-2 d-flex justify-content-between align-items-center small fw-medium">
+                                                                            <strong>Thành tiền</strong>
+                                                                            <span style="color:rgb(60, 199, 60)" class="fs-5">500.000đ</span>
+                                                                        </div>
+                                                                      </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer me-1">
+                                                    <button type="button me-5" class="btn btn-success">Hủy đơn hàng</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </td>
+                                    
+                                
                             </tr>
                             <tr>
                                 <td class="align-middle" scope="row">
