@@ -12,6 +12,7 @@
      <link rel="stylesheet" href="/assets/css/style.css">
      <link rel="stylesheet" href="/assets/css/product.css">
      <link rel="stylesheet" href="/assets/css/cart.css">
+     <link rel="stylesheet" href="/assets/css/personalInfo.css">
 
 </head>
 <body class="bg-light">
@@ -98,12 +99,20 @@
               
         </div>
         <!-- Row thông tin cá nhân -->
-        <div class="row pt-4 mt-1">
-            <form action="">
+        <form class="row pt-4 mt-1 d-flex">
+            
             <!-- col avatar -->
-            <div class=" col-md-4">
-                <div class="personal-avatar shadow border rounded-3 p-4 bg-white">
-                    a
+            <div class=" col-md-4 d-flex flex-column justify-content-center">
+                <div class="personal-avatar shadow border rounded-3 p-4 bg-white h-100 d-flex flex-column justify-content-center align-items-center">
+                    <label for="avatarInput" class="position-relative p-4 avatar-label">
+                        <img src="/assets/uploads/spdemo3.jpg" id="avatarPreview" class="avatar-preview mb-3 bg-secondary" alt="Avatar Preview">
+                        <div class="overlay d-flex justify-content-center align-items-center" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); border-radius: 50%; color: white; font-size: 14px; opacity: 0; transition: opacity 0.3s;">
+                            Nhấn để chọn
+                        </div>
+                    </label>
+                
+                    <!-- File input (ẩn đi) -->
+                    <input type="file" id="avatarInput" class="form-control avatar-upload-btn d-none" accept="image/*">
                 </div>
             </div>
             <!-- col thông tin cá nhân -->
@@ -151,8 +160,7 @@
                     </div>
                 </div>
             </div>
-            </form>
-        </div>
+        </form>
         <!-- Row Lịch sử mua hàng -->
 
     </div>
@@ -246,6 +254,7 @@
     <!-- js bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- js -->
+    <script src="/assets/js/personalInfo.js"></script>
     
     
 </body>
