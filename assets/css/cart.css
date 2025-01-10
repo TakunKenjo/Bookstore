@@ -1,5 +1,5 @@
 .table-responsive {
-    max-height: 635px;
+    max-height: 435px;
     overflow-y: auto;   
 }
 
@@ -7,3 +7,9 @@
 .table-responsive::-webkit-scrollbar {
     display: none;  
 }
+thead {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff; /* Đặt nền trắng để không bị che */
+    z-index: 1; /* Đảm bảo nằm trên nội dung của tbody */
+  }
