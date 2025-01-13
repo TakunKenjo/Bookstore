@@ -10,6 +10,6 @@
 thead {
     position: sticky;
     top: 0;
-    background-color: #ffffff; /* Đặt nền trắng để không bị che */
-    z-index: 1; /* Đảm bảo nằm trên nội dung của tbody */
+    background-color: #ffffff; 
+    z-index: 1; 
   }
