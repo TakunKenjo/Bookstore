@@ -9,10 +9,12 @@
     <!-- CSS bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- CSS  -->
-     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+     
+
 </head>
 <body class="bg-light">
-    <header class="border-bottom">
+    <header>
         <!-- Header top -->
         <div class="header-top bg-body-secondary">
         <div class="container">
@@ -44,13 +46,7 @@
                     <a class="nav-link active" aria-current="page" href="/assets/layout/client/index.html">TRANG CHỦ</a>
                   </li>
                   <li class="nav-item me-3">
-                    <a class="nav-link " aria-current="page" href="#">SÁCH</a>
-                  </li>
-                  <li class="nav-item me-3">
-                    <a class="nav-link " aria-current="page" href="#">LIÊN HỆ</a>
-                  </li>
-                  <li class="nav-item me-3">
-                    <a class="nav-link " aria-current="page" href="#">TIN NỔI BẬT</a>
+                    <a class="nav-link " aria-current="page" href="/assets/layout/client/product.html">SÁCH</a>
                   </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -59,13 +55,23 @@
                   <button class="btn-search icon-search btn btn-success d-flex align-items-center me-3" type="submit">
                     <svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
                   </button>
-                  <!-- logo cartcart -->
-                  <button class="cart-icon btn btn-success d-flex align-items-center rounded-5 me-3" type="submit">
-                    <svg height="16px" width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>   
+                  <!-- logo cart -->
+                  <a href="/assets/layout/client/cart.html" class="cart-icon btn btn-success d-flex align-items-center rounded-5 me-3" >
+                    <svg height="16px" width="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                      <path fill="#ffffff" d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+                    </svg>
+                  </a>
                   <!-- logo user -->
-                  <button class="user-icon btn btn-success d-flex align-items-center rounded-5  " type="submit">
-                    <svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/></svg>
-                  </button>
+                  <div class="nav-item dropdown d-flex align-items-center rounded-5">
+                    <div style="width: 41.6px; height: 37.6px; border-radius: 50%;" class="user-icon btn btn-success d-flex align-items-center rounded-5" data-bs-toggle="dropdown" aria-expanded="false" type="submit">
+                      <svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/></svg>
+                    </div>
+                    <ul class="dropdown-menu" style="margin-left: -120px; margin-top: 10px">
+                      <li><a class="dropdown-item" href="/assets/layout/client/personalInfo.html" style="--bs-dropdown-link-active-bg: #f2ebea; --bs-dropdown-link-active-color: black;">Thông tin cá nhân</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/assets/layout/client/orderHistory.html" style="--bs-dropdown-link-active-bg: #f2ebea; --bs-dropdown-link-active-color: black;">Đơn hàng</a></li>
+                    </ul>                    
+                  </div>
                   
                 </form>
             </div>
@@ -73,43 +79,71 @@
         <!-- Navbar end -->
     </header>
 <!-- --------------------------------------------------------------------------------------------- -->
-<section class="Login py-4 border-bottom">
-    <div class="container">
-        <!-- Row breadcumb -->
+<section class="order-sucess">
+    <div class="container py-4">
+        <!-- row breacumb -->
         <div class="row">
+            <h5>
+                Giỏ hàng
+            </h5>
             <div class="breadcrumb-holder">
                 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                  <ol class="breadcrumb border d-inline-flex px-3 py-1 rounded-pill align-items-center">
-                    <li class="breadcrumb-item"><a href="/assets/layout/client/index.html" class="text-decoration-none small text-black">Trang chủ</a></li>
-                    <li class="breadcrumb-item"><a href="/assets/layout/client/login.html" class="text-decoration-none small text-black">Đăng nhập</a></li>
-                    <li class="breadcrumb-item active small" aria-current="page">Quên mật khẩu</li>
+                  <ol class="breadcrumb d-inline-flex pe-3 py-1 align-items-center">
+                    <li class="breadcrumb-item d-flex align-items-center">
+                      <a href="/assets/layout/client/index.html" class="text-decoration-none small text-black">Trang chủ</a>
+                    </li>
+                    <li class="breadcrumb-item d-flex align-items-center small text-black" aria-current="page">
+                      Giỏ hàng
+                    </li>
+                    <li class="breadcrumb-item d-flex align-items-center small active" aria-current="page">
+                      Thanh toán
+                    </li>
                   </ol>
                 </nav>
             </div>
         </div>
-
-        <!-- Row Login form -->
-        <div class="row d-flex align-items-center justify-content-center ">
-            <div class="col-md-5">
-                <div class="card">
-                    <div class="card-header text-bg-warning fw-bold text-center text-white">
-                      QUÊN MẬT KHẨU
+        <!-- row progress -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="progress-container">
+                    <!-- Thanh tiến trình -->
+                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="height: 4px;">
+                      <div class="progress-bar bg-success" style="width: 100%;"></div>
                     </div>
-                    <div class="card-body">
-                        <form class="row g-3 py-3">
-                            <div class="col-md-12">
-                              <input placeholder="Nhập email..." type="email" class="form-control" id="validationDefault01" value="" required>
-                            </div>
-                            <div class="col-12 d-grid">
-                              <button class="btn btn-success" type="submit">Gửi mã</button>
-                            </div>
-                            
-                          </form>
-                    </div>
-                  </div>
+        
+                    <!-- Nút đầu -->
+                    <div class="step-circle active" style="left: 0%;"></div>
+                    <div class="step-label active text-black" style="left: 1%;">Thông tin giao hàng</div>
+              
+                    <!-- Nút giữa -->
+                    <div class="step-circle active " style="left: 50%;"></div>
+                    <div class="step-label active text-black" style="left: 51%;">Thông tin thanh toán</div>
+              
+                    <!-- Nút cuối -->
+                    <div class="step-circle active " style="left: 98%;"></div>
+                    <div class="step-label active text-black" style="left: 99%;">Thanh toán</div>
+                </div>
             </div>
         </div>
+        <!-- Row Thông báo đặt hàng thành công và button quay trở lại trang bán hàng -->
+        <div class="row py-4  d-flex justify-content-center text-align-items-center" style="margin-top:70px">
+            <div class="col-md-5 text-center">
+                <p class="fw-normal opacity-75 mb-4 fs-6 mb-5">
+                    Chúng tôi xin chân thành cảm ơn bạn đã tin tưởng và lựa chọn mua sắm tại cửa hàng của chúng tôi. Đơn hàng của bạn đã được xử lý thành công và chúng tôi sẽ tiến hành giao hàng trong thời gian sớm nhất. 
+            Chúng tôi hy vọng sản phẩm sẽ mang lại sự hài lòng và đáp ứng đầy đủ nhu cầu của bạn. 
+            Nếu có bất kỳ thắc mắc hoặc yêu cầu nào, đừng ngần ngại liên hệ với chúng tôi. 
+            Một lần nữa, cảm ơn bạn đã đồng hành cùng chúng tôi. Chúc bạn có một ngày tuyệt vời và mong được phục vụ bạn trong các đơn hàng tiếp theo!
+                </p>
+                <a href="/assets/layout/client/product.html" class="btn btn-success fs-6 btn-lg text-decoration-none d-inline-flex align-items-center  me-2">
+                    <i class="fa-solid fa-angle-left me-2"></i>
+                    <p class="mb-1">Trở lại mua hàng</p> 
+                </a>
+            </div>
+        </div>
+        
     </div>
+        
+
 </section>
 
 <!-- --------------------------------------------------------------------------------------------- -->
@@ -126,7 +160,7 @@
                 Công ty TNHH Sách & Lịch Đại Nam Số ĐKKD 0311752595 do Sở KHĐT Tp. HCM cấp ngày 25/04/2012</br>
               </br>
                 137 An Dương Vương <br>
-                phường 3, quận 55 <br>
+                phường 3, quận 5 <br>
                 Thành phố Hồ Chí Minh
               </address>
               <p class="small text-secondary">contact@bookbuy.com</p>
@@ -199,6 +233,7 @@
     <!-- js bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- js -->
+    <script src="/assets/js/personalInfo.js"></script>
     
     
 </body>
