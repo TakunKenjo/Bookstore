@@ -117,7 +117,7 @@
           </div>
         </div>
       </nav>
-        <!-- Navbar end -->
+      <!-- Navbar end -->
     </header>
 <!-- --------------------------------------------------------------------------------------------- -->
 <div class="container py-4 bg-light">
@@ -162,12 +162,9 @@
     </div>
     <!-- Button thêm sách -->
     <div class="col-md-1 d-flex justify-content-end">
-      <!-- Button trigger modal -->
-      <button style="width:110px" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        Thêm mới
-      </button>
-      <!-- Modal -->
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <button class="btn btn-success btn-sm" style="width:110px" data-bs-toggle="modal" href="#staticBackdrop" role="button">Thêm mới</button>
+      <!-- Thêm sách mới Modal -->
+      <div class="modal fade" id="staticBackdrop" aria-hidden="true" aria-labelledby="staticBackdropLabel" tabindex="-1">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
@@ -251,24 +248,26 @@
                         <div class="col-md-6 d-flex">
                           <label for="" class="col-form-label fw-medium me-5 pe-2">Tác giả</label>
                           <!-- Button trigger modal -->
-                          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                          <!-- <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                            Chọn tác giả
+                          </button> -->
+                          <!-- Nút mở modal AuthorPopup -->
+                          <button class="btn btn-outline-success" id="openAuthorModal" type="button">
                             Chọn tác giả
                           </button>
-                    
-                          <!-- Modal -->
-                          <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-                            <div class="modal-dialog">
+                          <!-- Author Modal -->
+                          <div class="modal fade AuthorModal" id="AuthorModal" aria-hidden="true" aria-labelledby="AuthorModalLabel" tabindex="-2">
+                            <div class="modal-dialog modal-dialog-centered">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h1 class="modal-title fs-5" id="exampleModalLabel1">Modal title</h1>
+                                  <h5 class="modal-title" id="AuthorModalLabel">hohohoho</h5>
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                  ...
+                                  <p>hohohoho</p>
                                 </div>
                                 <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                  <button type="button" class="btn btn-primary">Save changes</button>
+                                  <button class="btn btn-success" type="button">oke</button>
                                 </div>
                               </div>
                             </div>
@@ -293,7 +292,6 @@
       </div>
     </div>
   </div>
-
   <!-- row table -->
   <div class="row">
     <div class="col-md-12">
@@ -518,34 +516,35 @@
                                               <label for="" class="col-form-label fw-medium">Năm xuất bản</label>
                                               <input type="text" class="form-control" id="" placeholder="Nhập năm xuất bản..." style="width: 255px">
                                             </div>
-                                          
-                                            <!-- Cột tác giả -->
-                                            <div class="col-md-6 d-flex">
-                                              <label for="" class="col-form-label fw-medium me-5 pe-2">Tác giả</label>
-                                              <!-- Button trigger modal -->
-                                              <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-                                                Chọn tác giả
-                                              </button>
-                    
-                                              <!-- Modal -->
-                                              <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                  <div class="modal-content">
-                                                    <div class="modal-header">
-                                                      <h1 class="modal-title fs-5" id="exampleModalLabel3">Modal title</h1>
-                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                      ...
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                      <button type="button" class="btn btn-primary">Save changes</button>
-                                                    </div>
+                                          <!-- Cột tác giả -->
+                                          <div class="col-md-6 d-flex">
+                                            <label for="" class="col-form-label fw-medium me-5 pe-2">Tác giả</label>
+                                            <!-- Button trigger modal -->
+                                            <!-- <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                                              Chọn tác giả
+                                            </button> -->
+                                            <!-- Nút mở modal AuthorPopup -->
+                                            <button class="btn btn-outline-success" id="openAuthorModal" type="button">
+                                              Chọn tác giả
+                                            </button>
+                                            <!-- Author Modal -->
+                                            <div class="modal fade AuthorModal" id="AuthorModal" aria-hidden="true" aria-labelledby="AuthorModalLabel" tabindex="-2">
+                                              <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <h5 class="modal-title" id="AuthorModalLabel">hohohoho</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <p>hohohoho</p>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    <button class="btn btn-success" type="button">oke</button>
                                                   </div>
                                                 </div>
                                               </div>
                                             </div>
+                                          </div>
                                           </div>
                                           <div class="row mb-3">
                                             <label for="" class=" col-sm-2 col-form-label fw-medium text-start">Khuyến mãi</label>
@@ -588,111 +587,6 @@
 
                     </td>
                 </tr>
-                <tr>
-                  <!-- Mã sách -->
-                    <td class="align-middle text-center" scope="row">
-                        SP001
-                    </td>
-                  <!-- Hình ảnh sách -->
-                    <td class="book-image text-center" scope="row">
-                        <img src="/assets/uploads/spdemo.jpg" style="width:120px" alt="">
-                    </td>
-                  <!-- Tên sách -->
-                    <td class="book-name  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        Pháp Y Tống Từ  
-                    </td>
-                  <!-- Số lượng tồn kho -->
-                    <td class="align-middle text-center">
-                        998
-                    </td> 
-                  <!-- Giá bán -->
-                    <td class="align-middle text-center ">
-                        100.000đ
-                    </td>
-                  <!-- Trạng thái -->
-                    <td class=" align-middle text-center text-success fw-bold">
-                        Hoạt động
-                    </td>
-                  <!-- Tùy chỉnh -->
-                    <td class="align-middle text-center">
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/info.png" style="width:20px" alt="">
-                        </button>
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/edit.png" style="width:20px" alt="">
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                  <!-- Mã sách -->
-                    <td class="align-middle text-center" scope="row">
-                        SP001
-                    </td>
-                  <!-- Hình ảnh sách -->
-                    <td class="book-image text-center" scope="row">
-                        <img src="/assets/uploads/spdemo.jpg" style="width:120px" alt="">
-                    </td>
-                  <!-- Tên sách -->
-                    <td class="book-name  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        Pháp Y Tống Từ  
-                    </td>
-                  <!-- Số lượng tồn kho -->
-                    <td class="align-middle text-center">
-                        998
-                    </td> 
-                  <!-- Giá bán -->
-                    <td class="align-middle text-center ">
-                        100.000đ
-                    </td>
-                  <!-- Trạng thái -->
-                    <td class=" align-middle text-center text-success fw-bold">
-                        Hoạt động
-                    </td>
-                  <!-- Tùy chỉnh -->
-                    <td class="align-middle text-center">
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/info.png" style="width:20px" alt="">
-                        </button>
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/edit.png" style="width:20px" alt="">
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                  <!-- Mã sách -->
-                    <td class="align-middle text-center" scope="row">
-                        SP001
-                    </td>
-                  <!-- Hình ảnh sách -->
-                    <td class="book-image text-center" scope="row">
-                        <img src="/assets/uploads/spdemo.jpg" style="width:120px" alt="">
-                    </td>
-                  <!-- Tên sách -->
-                    <td class="book-name  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        Pháp Y Tống Từ  
-                    </td>
-                  <!-- Số lượng tồn kho -->
-                    <td class="align-middle text-center">
-                        998
-                    </td> 
-                  <!-- Giá bán -->
-                    <td class="align-middle text-center ">
-                        100.000đ
-                    </td>
-                  <!-- Trạng thái -->
-                    <td class=" align-middle text-center text-success fw-bold">
-                        Hoạt động
-                    </td>
-                  <!-- Tùy chỉnh -->
-                    <td class="align-middle text-center">
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/info.png" style="width:20px" alt="">
-                        </button>
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/edit.png" style="width:20px" alt="">
-                        </button>
-                    </td>
-                </tr>
             </tbody>
         </table>
       </div>
@@ -720,6 +614,9 @@
         </nav>   
     </div>
   </div>
+
+
+  
 </div>
 
 <!-- ------------------------------------------------------------------------------------------------- -->
@@ -728,6 +625,7 @@
     <!-- js -->
     <script src="/assets/js/admin/uploadImg.js"></script>
 
+    <script src="/assets/js/admin/admin.js"></script>
     
     
 </body>
