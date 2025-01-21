@@ -65,13 +65,13 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active d-flex align-items-center" aria-current="page" href="/assets/layout/admin/author.html">
+                  <a class="nav-link d-flex align-items-center" aria-current="page" href="/assets/layout/admin/author.html">
                     <img src="/assets/img/writer.png" alt="">
                     <span class="ms-3 fs-5">Quản lý tác giả</span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link  d-flex align-items-center" aria-current="page" href="/assets/layout/admin/discount.html">
+                  <a class="nav-link active d-flex align-items-center" aria-current="page" href="/assets/layout/admin/discount.html">
                     <img src="/assets/img/discount.png" alt="">
                     <span class="ms-3 fs-5">Quản lý mã giảm giá</span>
                   </a>
@@ -124,46 +124,52 @@
   <!-- row Panel -->
   <div class="row pb-4">
     <h4>
-        Quản lý tác giả
+        Quản lý giảm giá
     </h4>
   </div>
-  <!-- row search, button thêm danh mục -->
+  <!-- row search, button  -->
   <div class="row py-3 px-1 mb-2">
     <!-- Form tìm kiếm -->
     <div class="col-md-11 d-flex">
       <form class="d-flex w-100">
-          <input type="text" placeholder="Nhập mã, tên tác giả..." style="max-width: 1080px;" class="form-control me-4" id="">
+          <input type="text" placeholder="Nhập mã, phần trăm giảm giá..." style="max-width: 1080px;" class="form-control me-4" id="">
           <button class="btn btn-success btn-sm " >Tìm kiếm</button>
       </form>
     </div>
-    <!-- Button thêm tác giả -->
+    <!-- Button thêm -->
     <div class="col-md-1 d-flex justify-content-end">
       <!-- Button trigger modal -->
-      <button style="width:110px" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropAuthor">
+      <button style="width:110px" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropDiscount">
         Thêm mới
       </button>
       <!-- Modal -->
-      <div class="modal fade" id="staticBackdropAuthor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelAuthor" aria-hidden="true">
+      <div class="modal fade" id="staticBackdropDiscount" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelDiscount" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered model-xl">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabelAuthor">Thêm tác giả</h1>
+              <h1 class="modal-title fs-5" id="staticBackdropLabelDiscount">Thêm mã giảm giá</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="">
               <div class="modal-body">
                 <div class="row">
                     <div class="mb-3">
-                        <label for="" class="form-label fw-medium">Tên tác giả</label>
+                        <label for="" class="form-label fw-medium">Phần trăm giảm giá</label>
                         <input type="text" class="form-control" id="" aria-describedby="">
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-3">
-                        <label for="" class="form-label fw-medium">Email</label>
-                        <input type="email" class="form-control" id="" aria-describedby="">
+                        <label for="calendarInput" class="form-label fw-medium">Chọn ngày bắt đầu</label>
+                        <input type="date" id="calendarInput" class="form-control">
                     </div>
-                </div>
+                </div>               
+                <div class="row">
+                    <div class="mb-3">
+                        <label for="calendarInput" class="form-label fw-medium">Chọn ngày kết thúc</label>
+                        <input type="date" id="calendarInput" class="form-control">
+                    </div>
+                </div>               
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-success">Xác nhận</button>
@@ -182,26 +188,31 @@
         <table class="table table-hover">
             <thead class="text-center">
               <tr>
-                <th scope="col">Mã tác giả</th>
-                <th scope="col">Tên tác giả</th>
-                <th scope="col">Email</th>
+                <th scope="col">Mã giảm giá</th>
+                <th scope="col">Ngày bắt đầu</th>
+                <th scope="col">Ngày kết thúc</th>
+                <th scope="col">Phần trăm (%)</th>
                 <th scope="col">Trạng thái</th>
                 <th scope="col">Tùy chỉnh</th>
               </tr>
             </thead>
             <tbody  class="table-group-divider">
                 <tr>
-                  <!-- Mã tác giả -->
+                  <!-- Mã  -->
                     <td class="align-middle text-center" scope="row">
-                        TG001
+                        KM001
                     </td>
-                  <!-- Tên tác gỉa -->
+                  <!-- Ngày bắt đầu-->
                     <td class="  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        Nguyễn Nhật Ánh
+                        10/1/2024
                     </td>
-                  <!-- Email -->
+                  <!-- Ngày kết thúc -->
                     <td class="  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        nganh11@gmail.com
+                        10/1/2025
+                    </td>
+                  <!-- Phần trăm -->
+                    <td class="  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
+                        20
                     </td>
                   <!-- Trạng thái -->
                     <td class=" align-middle text-center text-success fw-bold">
@@ -211,38 +222,35 @@
                     <td class="align-middle text-center">
                         <!-- Button chỉnh sửa -->
                           <!-- Button trigger modal -->
-                          <button class="btn" fdprocessedid="r9x0b9" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropEditAuthor">
+                          <button class="btn" fdprocessedid="r9x0b9" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropEditDiscount">
                             <img src="/assets/img/edit.png" style="width:20px" alt="">
                           </button>
                           <!-- Modal -->
-                          <div class="modal fade" id="staticBackdropEditAuthor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelEditAuthor" aria-hidden="true">
+                          <div class="modal fade" id="staticBackdropEditDiscount" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelEditDiscount" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-lg">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h1 class="modal-title fs-5" id="staticBackdropLabelEditAuthor">Chỉnh sửa thông tin tác giả</h1>
+                                  <h1 class="modal-title fs-5" id="staticBackdropLabelEditDiscount">Chỉnh sửa thông tin khuyến mãi</h1>
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <form action="">
                                   <div class="modal-body">
                                     <div class="row mb-3">
-                                        <label for="" class=" col-sm-3 col-form-label fw-medium text-start">Tên tác giả</label>
+                                        <label for="" class=" col-sm-3 col-form-label fw-medium text-start">Phần trăm khuyến mãi</label>
                                         <div class="col-sm-9">
                                           <input type="text" class="form-control" id="">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="" class=" col-sm-3 col-form-label fw-medium text-start">Email</label>
+                                        <label for="calendarInput" class="col-sm-3 text-start form-label fw-medium">Ngày bắt đầu</label>
                                         <div class="col-sm-9">
-                                          <input type="text" class="form-control" id="">
+                                            <input type="date" id="calendarInput" class="form-control">
                                         </div>
                                     </div>
-                                    <div class="row mb-3 d-flex justify-content-center align-items-center">
-                                        <label for="" class="col-sm-3 col-form-label fw-medium text-start">Trạng thái</label>
-                                        <div class="d-flex align-items-center col-sm-9">
-                                          <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
-                                            <label class="form-check-label" for="toggleSwitch">Hoạt động</label>
-                                          </div>
+                                    <div class="row mb-3">
+                                        <label for="calendarInput" class="col-sm-3 text-start form-label fw-medium">Ngày kết thúc</label>
+                                        <div class="col-sm-9">
+                                            <input type="date" id="calendarInput" class="form-control">
                                         </div>
                                     </div>
                                   </div>
@@ -253,22 +261,28 @@
                               </div>
                             </div>
                           </div>
-
-
+                        <!-- Button xóa-->
+                        <button class="btn" fdprocessedid="r9x0b9" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropInfo">
+                            <img src="/assets/img/trash.png" style="width:20px" alt="">
+                         </button>
                     </td>
                 </tr>
                 <tr>
-                  <!-- Mã tác giả -->
+                  <!-- Mã  -->
                     <td class="align-middle text-center" scope="row">
-                        TG001
+                        KM001
                     </td>
-                  <!-- Tên tác gỉa -->
+                  <!-- Ngày bắt đầu-->
                     <td class="  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        Nguyễn Nhật Ánh
+                        10/1/2024
                     </td>
-                  <!-- Email -->
+                  <!-- Ngày kết thúc -->
                     <td class="  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        nganh11@gmail.com
+                        10/1/2025
+                    </td>
+                  <!-- Phần trăm -->
+                    <td class="  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
+                        20
                     </td>
                   <!-- Trạng thái -->
                     <td class=" align-middle text-center text-success fw-bold">
@@ -278,38 +292,35 @@
                     <td class="align-middle text-center">
                         <!-- Button chỉnh sửa -->
                           <!-- Button trigger modal -->
-                          <button class="btn" fdprocessedid="r9x0b9" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropEditAuthor">
+                          <button class="btn" fdprocessedid="r9x0b9" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropEditDiscount">
                             <img src="/assets/img/edit.png" style="width:20px" alt="">
                           </button>
                           <!-- Modal -->
-                          <div class="modal fade" id="staticBackdropEditAuthor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelEditAuthor" aria-hidden="true">
+                          <div class="modal fade" id="staticBackdropEditDiscount" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelEditDiscount" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-lg">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h1 class="modal-title fs-5" id="staticBackdropLabelEditAuthor">Chỉnh sửa thông tin tác giả</h1>
+                                  <h1 class="modal-title fs-5" id="staticBackdropLabelEditDiscount">Chỉnh sửa thông tin khuyến mãi</h1>
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <form action="">
                                   <div class="modal-body">
                                     <div class="row mb-3">
-                                        <label for="" class=" col-sm-3 col-form-label fw-medium text-start">Tên tác giả</label>
+                                        <label for="" class=" col-sm-3 col-form-label fw-medium text-start">Phần trăm khuyến mãi</label>
                                         <div class="col-sm-9">
                                           <input type="text" class="form-control" id="">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="" class=" col-sm-3 col-form-label fw-medium text-start">Email</label>
+                                        <label for="calendarInput" class="col-sm-3 text-start form-label fw-medium">Ngày bắt đầu</label>
                                         <div class="col-sm-9">
-                                          <input type="text" class="form-control" id="">
+                                            <input type="date" id="calendarInput" class="form-control">
                                         </div>
                                     </div>
-                                    <div class="row mb-3 d-flex justify-content-center align-items-center">
-                                        <label for="" class="col-sm-3 col-form-label fw-medium text-start">Trạng thái</label>
-                                        <div class="d-flex align-items-center col-sm-9">
-                                          <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
-                                            <label class="form-check-label" for="toggleSwitch">Hoạt động</label>
-                                          </div>
+                                    <div class="row mb-3">
+                                        <label for="calendarInput" class="col-sm-3 text-start form-label fw-medium">Ngày kết thúc</label>
+                                        <div class="col-sm-9">
+                                            <input type="date" id="calendarInput" class="form-control">
                                         </div>
                                     </div>
                                   </div>
@@ -320,22 +331,28 @@
                               </div>
                             </div>
                           </div>
-
-
+                        <!-- Button xóa-->
+                        <button class="btn" fdprocessedid="r9x0b9" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropInfo">
+                            <img src="/assets/img/trash.png" style="width:20px" alt="">
+                         </button>
                     </td>
                 </tr>
                 <tr>
-                  <!-- Mã tác giả -->
+                  <!-- Mã  -->
                     <td class="align-middle text-center" scope="row">
-                        TG001
+                        KM001
                     </td>
-                  <!-- Tên tác gỉa -->
+                  <!-- Ngày bắt đầu-->
                     <td class="  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        Nguyễn Nhật Ánh
+                        10/1/2024
                     </td>
-                  <!-- Email -->
+                  <!-- Ngày kết thúc -->
                     <td class="  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        nganh11@gmail.com
+                        10/1/2025
+                    </td>
+                  <!-- Phần trăm -->
+                    <td class="  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
+                        20
                     </td>
                   <!-- Trạng thái -->
                     <td class=" align-middle text-center text-success fw-bold">
@@ -345,38 +362,35 @@
                     <td class="align-middle text-center">
                         <!-- Button chỉnh sửa -->
                           <!-- Button trigger modal -->
-                          <button class="btn" fdprocessedid="r9x0b9" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropEditAuthor">
+                          <button class="btn" fdprocessedid="r9x0b9" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropEditDiscount">
                             <img src="/assets/img/edit.png" style="width:20px" alt="">
                           </button>
                           <!-- Modal -->
-                          <div class="modal fade" id="staticBackdropEditAuthor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelEditAuthor" aria-hidden="true">
+                          <div class="modal fade" id="staticBackdropEditDiscount" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelEditDiscount" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-lg">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h1 class="modal-title fs-5" id="staticBackdropLabelEditAuthor">Chỉnh sửa thông tin tác giả</h1>
+                                  <h1 class="modal-title fs-5" id="staticBackdropLabelEditDiscount">Chỉnh sửa thông tin khuyến mãi</h1>
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <form action="">
                                   <div class="modal-body">
                                     <div class="row mb-3">
-                                        <label for="" class=" col-sm-3 col-form-label fw-medium text-start">Tên tác giả</label>
+                                        <label for="" class=" col-sm-3 col-form-label fw-medium text-start">Phần trăm khuyến mãi</label>
                                         <div class="col-sm-9">
                                           <input type="text" class="form-control" id="">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="" class=" col-sm-3 col-form-label fw-medium text-start">Email</label>
+                                        <label for="calendarInput" class="col-sm-3 text-start form-label fw-medium">Ngày bắt đầu</label>
                                         <div class="col-sm-9">
-                                          <input type="text" class="form-control" id="">
+                                            <input type="date" id="calendarInput" class="form-control">
                                         </div>
                                     </div>
-                                    <div class="row mb-3 d-flex justify-content-center align-items-center">
-                                        <label for="" class="col-sm-3 col-form-label fw-medium text-start">Trạng thái</label>
-                                        <div class="d-flex align-items-center col-sm-9">
-                                          <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
-                                            <label class="form-check-label" for="toggleSwitch">Hoạt động</label>
-                                          </div>
+                                    <div class="row mb-3">
+                                        <label for="calendarInput" class="col-sm-3 text-start form-label fw-medium">Ngày kết thúc</label>
+                                        <div class="col-sm-9">
+                                            <input type="date" id="calendarInput" class="form-control">
                                         </div>
                                     </div>
                                   </div>
@@ -387,22 +401,28 @@
                               </div>
                             </div>
                           </div>
-
-
+                        <!-- Button xóa-->
+                        <button class="btn" fdprocessedid="r9x0b9" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropInfo">
+                            <img src="/assets/img/trash.png" style="width:20px" alt="">
+                         </button>
                     </td>
                 </tr>
                 <tr>
-                  <!-- Mã tác giả -->
+                  <!-- Mã  -->
                     <td class="align-middle text-center" scope="row">
-                        TG001
+                        KM001
                     </td>
-                  <!-- Tên tác gỉa -->
+                  <!-- Ngày bắt đầu-->
                     <td class="  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        Nguyễn Nhật Ánh
+                        10/1/2024
                     </td>
-                  <!-- Email -->
+                  <!-- Ngày kết thúc -->
                     <td class="  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        nganh11@gmail.com
+                        10/1/2025
+                    </td>
+                  <!-- Phần trăm -->
+                    <td class="  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
+                        20
                     </td>
                   <!-- Trạng thái -->
                     <td class=" align-middle text-center text-success fw-bold">
@@ -412,38 +432,35 @@
                     <td class="align-middle text-center">
                         <!-- Button chỉnh sửa -->
                           <!-- Button trigger modal -->
-                          <button class="btn" fdprocessedid="r9x0b9" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropEditAuthor">
+                          <button class="btn" fdprocessedid="r9x0b9" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropEditDiscount">
                             <img src="/assets/img/edit.png" style="width:20px" alt="">
                           </button>
                           <!-- Modal -->
-                          <div class="modal fade" id="staticBackdropEditAuthor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelEditAuthor" aria-hidden="true">
+                          <div class="modal fade" id="staticBackdropEditDiscount" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelEditDiscount" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-lg">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h1 class="modal-title fs-5" id="staticBackdropLabelEditAuthor">Chỉnh sửa thông tin tác giả</h1>
+                                  <h1 class="modal-title fs-5" id="staticBackdropLabelEditDiscount">Chỉnh sửa thông tin khuyến mãi</h1>
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <form action="">
                                   <div class="modal-body">
                                     <div class="row mb-3">
-                                        <label for="" class=" col-sm-3 col-form-label fw-medium text-start">Tên tác giả</label>
+                                        <label for="" class=" col-sm-3 col-form-label fw-medium text-start">Phần trăm khuyến mãi</label>
                                         <div class="col-sm-9">
                                           <input type="text" class="form-control" id="">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="" class=" col-sm-3 col-form-label fw-medium text-start">Email</label>
+                                        <label for="calendarInput" class="col-sm-3 text-start form-label fw-medium">Ngày bắt đầu</label>
                                         <div class="col-sm-9">
-                                          <input type="text" class="form-control" id="">
+                                            <input type="date" id="calendarInput" class="form-control">
                                         </div>
                                     </div>
-                                    <div class="row mb-3 d-flex justify-content-center align-items-center">
-                                        <label for="" class="col-sm-3 col-form-label fw-medium text-start">Trạng thái</label>
-                                        <div class="d-flex align-items-center col-sm-9">
-                                          <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
-                                            <label class="form-check-label" for="toggleSwitch">Hoạt động</label>
-                                          </div>
+                                    <div class="row mb-3">
+                                        <label for="calendarInput" class="col-sm-3 text-start form-label fw-medium">Ngày kết thúc</label>
+                                        <div class="col-sm-9">
+                                            <input type="date" id="calendarInput" class="form-control">
                                         </div>
                                     </div>
                                   </div>
@@ -454,22 +471,28 @@
                               </div>
                             </div>
                           </div>
-
-
+                        <!-- Button xóa-->
+                        <button class="btn" fdprocessedid="r9x0b9" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropInfo">
+                            <img src="/assets/img/trash.png" style="width:20px" alt="">
+                         </button>
                     </td>
                 </tr>
                 <tr>
-                  <!-- Mã tác giả -->
+                  <!-- Mã  -->
                     <td class="align-middle text-center" scope="row">
-                        TG001
+                        KM001
                     </td>
-                  <!-- Tên tác gỉa -->
+                  <!-- Ngày bắt đầu-->
                     <td class="  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        Nguyễn Nhật Ánh
+                        10/1/2024
                     </td>
-                  <!-- Email -->
+                  <!-- Ngày kết thúc -->
                     <td class="  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        nganh11@gmail.com
+                        10/1/2025
+                    </td>
+                  <!-- Phần trăm -->
+                    <td class="  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
+                        20
                     </td>
                   <!-- Trạng thái -->
                     <td class=" align-middle text-center text-success fw-bold">
@@ -479,38 +502,35 @@
                     <td class="align-middle text-center">
                         <!-- Button chỉnh sửa -->
                           <!-- Button trigger modal -->
-                          <button class="btn" fdprocessedid="r9x0b9" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropEditAuthor">
+                          <button class="btn" fdprocessedid="r9x0b9" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropEditDiscount">
                             <img src="/assets/img/edit.png" style="width:20px" alt="">
                           </button>
                           <!-- Modal -->
-                          <div class="modal fade" id="staticBackdropEditAuthor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelEditAuthor" aria-hidden="true">
+                          <div class="modal fade" id="staticBackdropEditDiscount" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelEditDiscount" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-lg">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h1 class="modal-title fs-5" id="staticBackdropLabelEditAuthor">Chỉnh sửa thông tin tác giả</h1>
+                                  <h1 class="modal-title fs-5" id="staticBackdropLabelEditDiscount">Chỉnh sửa thông tin khuyến mãi</h1>
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <form action="">
                                   <div class="modal-body">
                                     <div class="row mb-3">
-                                        <label for="" class=" col-sm-3 col-form-label fw-medium text-start">Tên tác giả</label>
+                                        <label for="" class=" col-sm-3 col-form-label fw-medium text-start">Phần trăm khuyến mãi</label>
                                         <div class="col-sm-9">
                                           <input type="text" class="form-control" id="">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="" class=" col-sm-3 col-form-label fw-medium text-start">Email</label>
+                                        <label for="calendarInput" class="col-sm-3 text-start form-label fw-medium">Ngày bắt đầu</label>
                                         <div class="col-sm-9">
-                                          <input type="text" class="form-control" id="">
+                                            <input type="date" id="calendarInput" class="form-control">
                                         </div>
                                     </div>
-                                    <div class="row mb-3 d-flex justify-content-center align-items-center">
-                                        <label for="" class="col-sm-3 col-form-label fw-medium text-start">Trạng thái</label>
-                                        <div class="d-flex align-items-center col-sm-9">
-                                          <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
-                                            <label class="form-check-label" for="toggleSwitch">Hoạt động</label>
-                                          </div>
+                                    <div class="row mb-3">
+                                        <label for="calendarInput" class="col-sm-3 text-start form-label fw-medium">Ngày kết thúc</label>
+                                        <div class="col-sm-9">
+                                            <input type="date" id="calendarInput" class="form-control">
                                         </div>
                                     </div>
                                   </div>
@@ -521,10 +541,13 @@
                               </div>
                             </div>
                           </div>
-
-
+                        <!-- Button xóa-->
+                        <button class="btn" fdprocessedid="r9x0b9" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropInfo">
+                            <img src="/assets/img/trash.png" style="width:20px" alt="">
+                         </button>
                     </td>
                 </tr>
+
             </tbody>
         </table>
       </div>
