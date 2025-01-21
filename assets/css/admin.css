@@ -60,39 +60,40 @@
     border-radius: 10px; 
     object-position: center; 
 }
-/*------------------------------------- CSS table------------------------------- */
-.table-responsive {
-    max-height: 644px;
-    overflow-y: auto;   
-}
-/* Tùy chỉnh thanh cuộn */
-.table-responsive::-webkit-scrollbar {
-    width: 10px; 
-    height: 10px; 
-}
-
-/* Phần nền của thanh cuộn (track) */
-.table-responsive::-webkit-scrollbar-track {
-    background: #f0f0f0; 
-    border-radius: 10px; 
-}
-
-/* Phần thumb của thanh cuộn (nút kéo) */
-.table-responsive::-webkit-scrollbar-thumb {
-    background: #d2dad2; 
-    border-radius: 10px; 
-    border: 2px solid #f0f0f0; 
-}
-
-/* Khi người dùng hover lên thanh cuộn */
-.table-responsive::-webkit-scrollbar-thumb:hover {
-    background: #b4b8b1; 
-}
-
-/* Cố định header của table */
-thead {
-    position: sticky;
-    top: 0;
-    background-color: #ffffff; 
-    z-index: 1; 
+/* ------------------------------------------Phân trang--------------------- */
+/* Màu mặc định cho các nút phân trang */
+.pagination .page-link {
+    color: #28a745; 
+  }
+  .pagination .page-link i {
+    color: #28a745; 
+  }
+  
+  /* Hover: Đổi màu nền và màu chữ */
+  .pagination .page-link:hover {
+    color: white; 
+    background-color: #28a745; 
+  }
+  
+  /* Hover: Đổi màu icon Previous và Next */
+  .pagination .page-link:hover .pre,
+  .pagination .page-link:hover .next {
+    color: white; 
+  }
+  
+  /* Active trạng thái của trang hiện tại */
+  .pagination .page-item.active .page-link {
+    color: white; 
+    background-color: #28a745; 
+  }
+  
+  /*Chỉnh kích thước các nút */
+  .pagination .page-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 16px;
   }

@@ -9,7 +9,7 @@
     <!-- CSS bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- CSS  -->
-     <link rel="stylesheet" href="/assets/css/admin.css">
+    <link rel="stylesheet" href="/assets/css/admin.css">
 </head>
 <body class="bg-light">
     <header class="border-bottom">
@@ -128,9 +128,9 @@
     </h4>
   </div>
   <!-- row filter, button thêm sách -->
-  <div class="row p-3 border rounded-3 bg-white mb-3">
+  <div class="row py-3 px-1 mb-2">
     <!-- Form tìm kiếm -->
-    <div class="col-md-8 d-flex">
+    <div class="col-md-11 d-flex">
       <form class="d-flex w-100">
           <select class="form-select me-2" aria-label="Default select example" style="max-width: 200px;">
               <option selected>Tất cả thể loại</option>
@@ -138,24 +138,166 @@
               <option value="2">Two</option>
               <option value="3">Three</option>
           </select>
-          <input type="text" placeholder="Nhập mã, tên sách..." class="form-control" id="exampleInputPassword1">
+          <input type="text" placeholder="Nhập mã, tên sách..." style="max-width: 365px;" class="form-control me-4" id="">
+          <!-- div tìm kiếm theo khoảng giá -->
+          <div class="d-flex justify-content-center text-align-items-center me-4">
+            <span class="me-2 d-flex justify-content-center align-items-center">
+              Khoảng giá
+            </span>
+            <input type="text" style="max-width: 90px;" class="form-control me-2" id="">
+            <span class="fs-3 me-2">-</span>
+            <input type="text" style="max-width: 90px;" class="form-control" id="">
+          </div>
+          <div class="me-2 d-flex justify-content-center text-align-items-center">
+            <span class="me-2 d-flex justify-content-center align-items-center">Tồn kho</span>
+            <button class="btn me-2 d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-arrow-up-wide-short fs-5 "></i>
+            </button>
+            <button class="btn me-2 d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-arrow-down-wide-short fs-5 "></i>
+            </button>
+          </div>
+          <button class="btn btn-success btn-sm " >Tìm kiếm</button>
       </form>
     </div>
-  
-    <!-- Form sắp xếp theo số lượng tồn kho -->
-    <div class="col-md-2">
-
-    </div>
     <!-- Button thêm sách -->
-    <div class="col-md-2">
-
+    <div class="col-md-1 d-flex justify-content-end">
+      <!-- Button trigger modal -->
+      <button style="width:110px" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Thêm mới
+      </button>
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm sách mới</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="">
+              <div class="modal-body">
+                <div class="row">
+                  <!-- col hình ảnh -->
+                  <div class="col-md-3">
+                    <div class="row ">
+                      <!-- Khung hình ảnh -->
+                      <div class="col-md-12 text-center">
+                        <div class="border rounded-3 p-4 bg-light" style="height: 300px; display: flex; align-items: center; justify-content: center;">
+                          <img id="previewImage" src="https://via.placeholder.com/150" alt="Preview" style="max-width: 100%; max-height: 100%; display: none;">
+                          <span id="placeholderText" class="text-muted" style="font-size: 1.2rem;">Chưa tải ảnh lên</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row justify-content-center mt-3">
+                      <!-- Nút nhập hình ảnh -->
+                      <div class="col-md-12 text-center">
+                        <label for="uploadImage" class="btn btn-outline-success rounded-pill">
+                          <i class="fa-solid fa-upload"></i> Tải hình ảnh
+                        </label>
+                        <input type="file" id="uploadImage" class="d-none" accept="image/*" onchange="previewFile()">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- col thông tin sách -->
+                  <div class="col-md-9 px-3">
+                      <div class="row mb-3">
+                        <label for="" class="col-sm-2 col-form-label fw-medium">Tên sách</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="" placeholder="Nhập tên sách...">
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="" class="col-sm-2 col-form-label fw-medium">Nhà xuất bản</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="" placeholder="Nhập nhà xuất bản...">
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col-md-6 d-flex justify-content-between">
+                          <label for="" class="col-form-label fw-medium">Nhà cung cấp</label>
+                          <select class="form-select align-items-end" aria-label="Default select example" style="width: 255px">
+                            <option selected>Chọn nhà cung cấp</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-between">
+                          <label for="" class="col-form-label fw-medium ">Thể loại</label>
+                          <select class="form-select align-items-end" aria-label="Default select example" style="width: 290px">
+                            <option selected>Chọn thể loại</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col-md-6 d-flex justify-content-between">
+                          <label for="" class="col-form-label fw-medium">Giá bìa</label>
+                          <input type="text" class="form-control" id="" placeholder="Nhập giá bìa (đồng)" style="width: 255px">
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-between">
+                          <label for="" class="col-form-label fw-medium">Trọng lượng</label>
+                          <input type="text" class="form-control" id="" placeholder="Nhập trọng lượng (gam)" style="width: 290px">
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col-md-6 d-flex justify-content-between">
+                          <label for="" class="col-form-label fw-medium">Năm xuất bản</label>
+                          <input type="text" class="form-control" id="" placeholder="Nhập năm xuất bản..." style="width: 255px">
+                        </div>
+                        <!-- Cột tác giả -->
+                        <div class="col-md-6 d-flex">
+                          <label for="" class="col-form-label fw-medium me-5 pe-2">Tác giả</label>
+                          <!-- Button trigger modal -->
+                          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                            Chọn tác giả
+                          </button>
+                    
+                          <!-- Modal -->
+                          <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h1 class="modal-title fs-5" id="exampleModalLabel1">Modal title</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  ...
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>   
+                      <div class="row mb-3">
+                        <div class="col-md-12 d-flex justify-content-between ">
+                          <label for="" class="col-form-label fw-medium">Mô tả</label>
+                          <textarea class="form-control" aria-label="With textarea" style="width: 675px; max-height: 150px; overflow-y: auto;"></textarea>
+                        </div>
+                      </div>               
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success">Xác nhận</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- row table -->
   <div class="row">
     <div class="col-md-12">
-      <div class="cart-product pb-2 px-2 border rounded-3 shadow bg-white table-responsive">
+      <div class=" pb-2 px-2 border rounded-3 shadow bg-white table-responsive">
         <table class="table table-hover">
             <thead class="text-center">
               <tr>
@@ -192,7 +334,330 @@
                         100.000đ
                     </td>
                   <!-- Trạng thái -->
-                    <td class=" align-middle text-center text-info fw-bold">
+                    <td class=" align-middle text-center text-success fw-bold">
+                        Hoạt động
+                    </td>
+                  <!-- Tùy chỉnh -->
+                    <td class="align-middle text-center">
+                      <!-- Button xem thông tin chi tiết -->
+                        <button class="btn" fdprocessedid="r9x0b9" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropInfo">
+                            <img src="/assets/img/info.png" style="width:20px" alt="">
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdropInfo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelInfo" aria-hidden="true">
+                          <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabelInfo">Thông tin chi tiết sách</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <form action="">
+                                <div class="modal-body">
+                                  <div class="row">
+                                    <!-- col hình ảnh -->
+                                    <div class="col-md-3">
+                                      <div class="row ">
+                                        <!-- Khung hình ảnh -->
+                                        <div class="col-md-12 text-center">
+                                          <div class="border rounded-3 p-4 bg-light" style="height: 300px; display: flex; align-items: center; justify-content: center;">
+                                            <img id="previewImage" src="https://via.placeholder.com/150" alt="Preview" style="max-width: 100%; max-height: 100%; display: none;">
+                                            <span id="placeholderText" class="text-muted" style="font-size: 1.2rem;">Chưa tải ảnh lên</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row justify-content-center mt-3">
+                                        <!-- Nút nhập hình ảnh -->
+                                        <div class="col-md-12 text-center">
+                                          <label for="uploadImage" class="btn btn-outline-success rounded-pill">
+                                            <i class="fa-solid fa-upload"></i> Tải hình ảnh
+                                          </label>
+                                          <input type="file" id="uploadImage" class="d-none" accept="image/*" onchange="previewFile()">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <!-- col thông tin sách -->
+                                    <div class="col-md-9 px-3">
+                                        <div class="row mb-3">
+                                          <label for="" class=" col-sm-2 col-form-label fw-medium text-start">Tên sách</label>
+                                          <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="" placeholder="Nhập tên sách...">
+                                          </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                          <label for="" class="col-sm-2 col-form-label fw-medium text-start">Nhà xuất bản</label>
+                                          <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="" placeholder="Nhập nhà xuất bản...">
+                                          </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                          <div class="col-md-6 d-flex justify-content-between">
+                                            <label for="" class="col-form-label fw-medium">Nhà cung cấp</label>
+                                            <input type="text" class="form-control disabled" id="" style="width: 255px; background-color: white; color: black" disabled>
+                                          </div>
+                                          <div class="col-md-6 d-flex justify-content-between">
+                                            <label for="" class="col-form-label fw-medium ">Thể loại</label>
+                                            <select class="form-select align-items-end" aria-label="Default select example" style="width: 290px">
+                                              <option selected>Chọn thể loại</option>
+                                              <option value="1">One</option>
+                                              <option value="2">Two</option>
+                                              <option value="3">Three</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                          <div class="col-md-6 d-flex justify-content-between">
+                                            <label for="" class="col-form-label fw-medium">Giá bìa</label>
+                                            <input type="text" class="form-control" id="" placeholder="Nhập giá bìa (đồng)" style="width: 255px">
+                                          </div>
+                                          <div class="col-md-6 d-flex justify-content-between">
+                                            <label for="" class="col-form-label fw-medium">Trọng lượng</label>
+                                            <input type="text" class="form-control" id="" placeholder="Nhập trọng lượng (gam)" style="width: 290px">
+                                          </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                          <div class="col-md-6 d-flex justify-content-between">
+                                            <label for="" class="col-form-label fw-medium">Năm xuất bản</label>
+                                            <input type="text" class="form-control" id="" placeholder="Nhập năm xuất bản..." style="width: 255px">
+                                          </div>
+                                          <!-- Cột tác giả -->
+                                          <div class="col-md-6 d-flex">
+                                            <label for="" class="col-form-label fw-medium me-5 pe-2">Tác giả</label>
+                                            <!-- Button trigger modal -->
+                                            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                              Chọn tác giả
+                                            </button>
+                  
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                              <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel2">Modal title</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    ...
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>   
+                                        <div class="row mb-3">
+                                          <label for="" class=" col-sm-2 col-form-label fw-medium text-start">Khuyến mãi</label>
+                                          <div class="col-sm-10">
+                                            <select class="form-select col-sm-10" aria-label="Default select example" >
+                                              <option selected>Chọn khuyến mãi</option>
+                                              <option value="1">One</option>
+                                              <option value="2">Two</option>
+                                              <option value="3">Three</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                          <div class="col-md-12 d-flex justify-content-between ">
+                                            <label for="" class="col-form-label fw-medium">Mô tả</label>
+                                            <textarea class="form-control" aria-label="With textarea" style="width: 675px; max-height: 150px; overflow-y: auto;"></textarea>
+                                          </div>
+                                        </div>
+                                        <div class="row mb-3 d-flex justify-content-center align-items-center">
+                                          <label for="" class="col-sm-2 col-form-label fw-medium text-start">Trạng thái</label>
+                                          <div class="d-flex align-items-center col-sm-10">
+                                            <div class="form-check form-switch">
+                                              <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
+                                              <label class="form-check-label" for="toggleSwitch">Đang bán</label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                                    
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-success">Xác nhận</button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Button chỉnh sửa -->
+                          <!-- Button trigger modal -->
+                          <button class="btn" fdprocessedid="r9x0b9" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropEdit">
+                            <img src="/assets/img/edit.png" style="width:20px" alt="">
+                          </button>
+                          <!-- Modal -->
+                          <div class="modal fade" id="staticBackdropEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelEdit" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h1 class="modal-title fs-5" id="staticBackdropLabelEdit">Chỉnh sửa thông tin sách</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form action="">
+                                  <div class="modal-body">
+                                    <div class="row">
+                                      <!-- col hình ảnh -->
+                                      <div class="col-md-3">
+                                        <div class="row ">
+                                          <!-- Khung hình ảnh -->
+                                          <div class="col-md-12 text-center">
+                                            <div class="border rounded-3 p-4 bg-light" style="height: 300px; display: flex; align-items: center; justify-content: center;">
+                                              <img id="previewImage" src="https://via.placeholder.com/150" alt="Preview" style="max-width: 100%; max-height: 100%; display: none;">
+                                              <span id="placeholderText" class="text-muted" style="font-size: 1.2rem;">Chưa tải ảnh lên</span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row justify-content-center mt-3">
+                                          <!-- Nút nhập hình ảnh -->
+                                          <div class="col-md-12 text-center">
+                                            <label for="uploadImage" class="btn btn-outline-success rounded-pill">
+                                              <i class="fa-solid fa-upload"></i> Tải hình ảnh
+                                            </label>
+                                            <input type="file" id="uploadImage" class="d-none" accept="image/*" onchange="previewFile()">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!-- col thông tin sách -->
+                                      <div class="col-md-9 px-3">
+                                          <div class="row mb-3">
+                                            <label for="" class=" col-sm-2 col-form-label fw-medium text-start">Tên sách</label>
+                                            <div class="col-sm-10">
+                                              <input type="text" class="form-control" id="" placeholder="Nhập tên sách...">
+                                            </div>
+                                          </div>
+                                          <div class="row mb-3">
+                                            <label for="" class="col-sm-2 col-form-label fw-medium text-start">Nhà xuất bản</label>
+                                            <div class="col-sm-10">
+                                              <input type="text" class="form-control" id="" placeholder="Nhập nhà xuất bản...">
+                                            </div>
+                                          </div>
+                                          <div class="row mb-3">
+                                            <div class="col-md-6 d-flex justify-content-between">
+                                              <label for="" class="col-form-label fw-medium">Nhà cung cấp</label>
+                                              <input type="text" class="form-control disabled" id="" style="width: 255px; background-color: white; color: black" disabled>
+                                            </div>
+                                            <div class="col-md-6 d-flex justify-content-between">
+                                              <label for="" class="col-form-label fw-medium ">Thể loại</label>
+                                              <select class="form-select align-items-end" aria-label="Default select example" style="width: 290px">
+                                                <option selected>Chọn thể loại</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                          <div class="row mb-3">
+                                            <div class="col-md-6 d-flex justify-content-between">
+                                              <label for="" class="col-form-label fw-medium">Giá bìa</label>
+                                              <input type="text" class="form-control" id="" placeholder="Nhập giá bìa (đồng)" style="width: 255px">
+                                            </div>
+                                            <div class="col-md-6 d-flex justify-content-between">
+                                              <label for="" class="col-form-label fw-medium">Trọng lượng</label>
+                                              <input type="text" class="form-control" id="" placeholder="Nhập trọng lượng (gam)" style="width: 290px">
+                                            </div>
+                                          </div>
+                                          <div class="row mb-3">
+                                            <div class="col-md-6 d-flex justify-content-between">
+                                              <label for="" class="col-form-label fw-medium">Năm xuất bản</label>
+                                              <input type="text" class="form-control" id="" placeholder="Nhập năm xuất bản..." style="width: 255px">
+                                            </div>
+                                          
+                                            <!-- Cột tác giả -->
+                                            <div class="col-md-6 d-flex">
+                                              <label for="" class="col-form-label fw-medium me-5 pe-2">Tác giả</label>
+                                              <!-- Button trigger modal -->
+                                              <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                                                Chọn tác giả
+                                              </button>
+                    
+                                              <!-- Modal -->
+                                              <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h1 class="modal-title fs-5" id="exampleModalLabel3">Modal title</h1>
+                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                      ...
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                      <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row mb-3">
+                                            <label for="" class=" col-sm-2 col-form-label fw-medium text-start">Khuyến mãi</label>
+                                            <div class="col-sm-10">
+                                              <select class="form-select col-sm-10" aria-label="Default select example" >
+                                                <option selected>Chọn khuyến mãi</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                          <div class="row mb-3">
+                                            <div class="col-md-12 d-flex justify-content-between ">
+                                              <label for="" class="col-form-label fw-medium">Mô tả</label>
+                                              <textarea class="form-control" aria-label="With textarea" style="width: 675px; max-height: 150px; overflow-y: auto;"></textarea>
+                                            </div>
+                                          </div>
+                                          <div class="row mb-3 d-flex justify-content-center align-items-center">
+                                            <label for="" class="col-sm-2 col-form-label fw-medium text-start">Trạng thái</label>
+                                            <div class="d-flex align-items-center col-sm-10">
+                                              <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
+                                                <label class="form-check-label" for="toggleSwitch">Đang bán</label>
+                                              </div>
+                                            </div>
+                                          </div>
+                                                      
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-success">Xác nhận</button>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+
+
+                    </td>
+                </tr>
+                <tr>
+                  <!-- Mã sách -->
+                    <td class="align-middle text-center" scope="row">
+                        SP001
+                    </td>
+                  <!-- Hình ảnh sách -->
+                    <td class="book-image text-center" scope="row">
+                        <img src="/assets/uploads/spdemo.jpg" style="width:120px" alt="">
+                    </td>
+                  <!-- Tên sách -->
+                    <td class="book-name  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
+                        Pháp Y Tống Từ  
+                    </td>
+                  <!-- Số lượng tồn kho -->
+                    <td class="align-middle text-center">
+                        998
+                    </td> 
+                  <!-- Giá bán -->
+                    <td class="align-middle text-center ">
+                        100.000đ
+                    </td>
+                  <!-- Trạng thái -->
+                    <td class=" align-middle text-center text-success fw-bold">
                         Hoạt động
                     </td>
                   <!-- Tùy chỉnh -->
@@ -227,7 +692,7 @@
                         100.000đ
                     </td>
                   <!-- Trạng thái -->
-                    <td class=" align-middle text-center text-info fw-bold">
+                    <td class=" align-middle text-center text-success fw-bold">
                         Hoạt động
                     </td>
                   <!-- Tùy chỉnh -->
@@ -262,252 +727,7 @@
                         100.000đ
                     </td>
                   <!-- Trạng thái -->
-                    <td class=" align-middle text-center text-info fw-bold">
-                        Hoạt động
-                    </td>
-                  <!-- Tùy chỉnh -->
-                    <td class="align-middle text-center">
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/info.png" style="width:20px" alt="">
-                        </button>
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/edit.png" style="width:20px" alt="">
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                  <!-- Mã sách -->
-                    <td class="align-middle text-center" scope="row">
-                        SP001
-                    </td>
-                  <!-- Hình ảnh sách -->
-                    <td class="book-image text-center" scope="row">
-                        <img src="/assets/uploads/spdemo.jpg" style="width:120px" alt="">
-                    </td>
-                  <!-- Tên sách -->
-                    <td class="book-name  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        Pháp Y Tống Từ  
-                    </td>
-                  <!-- Số lượng tồn kho -->
-                    <td class="align-middle text-center">
-                        998
-                    </td> 
-                  <!-- Giá bán -->
-                    <td class="align-middle text-center ">
-                        100.000đ
-                    </td>
-                  <!-- Trạng thái -->
-                    <td class=" align-middle text-center text-info fw-bold">
-                        Hoạt động
-                    </td>
-                  <!-- Tùy chỉnh -->
-                    <td class="align-middle text-center">
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/info.png" style="width:20px" alt="">
-                        </button>
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/edit.png" style="width:20px" alt="">
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                  <!-- Mã sách -->
-                    <td class="align-middle text-center" scope="row">
-                        SP001
-                    </td>
-                  <!-- Hình ảnh sách -->
-                    <td class="book-image text-center" scope="row">
-                        <img src="/assets/uploads/spdemo.jpg" style="width:120px" alt="">
-                    </td>
-                  <!-- Tên sách -->
-                    <td class="book-name  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        Pháp Y Tống Từ  
-                    </td>
-                  <!-- Số lượng tồn kho -->
-                    <td class="align-middle text-center">
-                        998
-                    </td> 
-                  <!-- Giá bán -->
-                    <td class="align-middle text-center ">
-                        100.000đ
-                    </td>
-                  <!-- Trạng thái -->
-                    <td class=" align-middle text-center text-info fw-bold">
-                        Hoạt động
-                    </td>
-                  <!-- Tùy chỉnh -->
-                    <td class="align-middle text-center">
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/info.png" style="width:20px" alt="">
-                        </button>
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/edit.png" style="width:20px" alt="">
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                  <!-- Mã sách -->
-                    <td class="align-middle text-center" scope="row">
-                        SP001
-                    </td>
-                  <!-- Hình ảnh sách -->
-                    <td class="book-image text-center" scope="row">
-                        <img src="/assets/uploads/spdemo.jpg" style="width:120px" alt="">
-                    </td>
-                  <!-- Tên sách -->
-                    <td class="book-name  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        Pháp Y Tống Từ  
-                    </td>
-                  <!-- Số lượng tồn kho -->
-                    <td class="align-middle text-center">
-                        998
-                    </td> 
-                  <!-- Giá bán -->
-                    <td class="align-middle text-center ">
-                        100.000đ
-                    </td>
-                  <!-- Trạng thái -->
-                    <td class=" align-middle text-center text-info fw-bold">
-                        Hoạt động
-                    </td>
-                  <!-- Tùy chỉnh -->
-                    <td class="align-middle text-center">
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/info.png" style="width:20px" alt="">
-                        </button>
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/edit.png" style="width:20px" alt="">
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                  <!-- Mã sách -->
-                    <td class="align-middle text-center" scope="row">
-                        SP001
-                    </td>
-                  <!-- Hình ảnh sách -->
-                    <td class="book-image text-center" scope="row">
-                        <img src="/assets/uploads/spdemo.jpg" style="width:120px" alt="">
-                    </td>
-                  <!-- Tên sách -->
-                    <td class="book-name  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        Pháp Y Tống Từ  
-                    </td>
-                  <!-- Số lượng tồn kho -->
-                    <td class="align-middle text-center">
-                        998
-                    </td> 
-                  <!-- Giá bán -->
-                    <td class="align-middle text-center ">
-                        100.000đ
-                    </td>
-                  <!-- Trạng thái -->
-                    <td class=" align-middle text-center text-info fw-bold">
-                        Hoạt động
-                    </td>
-                  <!-- Tùy chỉnh -->
-                    <td class="align-middle text-center">
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/info.png" style="width:20px" alt="">
-                        </button>
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/edit.png" style="width:20px" alt="">
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                  <!-- Mã sách -->
-                    <td class="align-middle text-center" scope="row">
-                        SP001
-                    </td>
-                  <!-- Hình ảnh sách -->
-                    <td class="book-image text-center" scope="row">
-                        <img src="/assets/uploads/spdemo.jpg" style="width:120px" alt="">
-                    </td>
-                  <!-- Tên sách -->
-                    <td class="book-name  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        Pháp Y Tống Từ  
-                    </td>
-                  <!-- Số lượng tồn kho -->
-                    <td class="align-middle text-center">
-                        998
-                    </td> 
-                  <!-- Giá bán -->
-                    <td class="align-middle text-center ">
-                        100.000đ
-                    </td>
-                  <!-- Trạng thái -->
-                    <td class=" align-middle text-center text-info fw-bold">
-                        Hoạt động
-                    </td>
-                  <!-- Tùy chỉnh -->
-                    <td class="align-middle text-center">
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/info.png" style="width:20px" alt="">
-                        </button>
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/edit.png" style="width:20px" alt="">
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                  <!-- Mã sách -->
-                    <td class="align-middle text-center" scope="row">
-                        SP001
-                    </td>
-                  <!-- Hình ảnh sách -->
-                    <td class="book-image text-center" scope="row">
-                        <img src="/assets/uploads/spdemo.jpg" style="width:120px" alt="">
-                    </td>
-                  <!-- Tên sách -->
-                    <td class="book-name  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        Pháp Y Tống Từ  
-                    </td>
-                  <!-- Số lượng tồn kho -->
-                    <td class="align-middle text-center">
-                        998
-                    </td> 
-                  <!-- Giá bán -->
-                    <td class="align-middle text-center ">
-                        100.000đ
-                    </td>
-                  <!-- Trạng thái -->
-                    <td class=" align-middle text-center text-info fw-bold">
-                        Hoạt động
-                    </td>
-                  <!-- Tùy chỉnh -->
-                    <td class="align-middle text-center">
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/info.png" style="width:20px" alt="">
-                        </button>
-                        <button class="btn" fdprocessedid="r9x0b9">
-                            <img src="/assets/img/edit.png" style="width:20px" alt="">
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                  <!-- Mã sách -->
-                    <td class="align-middle text-center" scope="row">
-                        SP001
-                    </td>
-                  <!-- Hình ảnh sách -->
-                    <td class="book-image text-center" scope="row">
-                        <img src="/assets/uploads/spdemo.jpg" style="width:120px" alt="">
-                    </td>
-                  <!-- Tên sách -->
-                    <td class="book-name  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        Pháp Y Tống Từ  
-                    </td>
-                  <!-- Số lượng tồn kho -->
-                    <td class="align-middle text-center">
-                        998
-                    </td> 
-                  <!-- Giá bán -->
-                    <td class="align-middle text-center ">
-                        100.000đ
-                    </td>
-                  <!-- Trạng thái -->
-                    <td class=" align-middle text-center text-info fw-bold">
+                    <td class=" align-middle text-center text-success fw-bold">
                         Hoạt động
                     </td>
                   <!-- Tùy chỉnh -->
@@ -525,12 +745,36 @@
       </div>
     </div>
   </div>
+  <!-- Row phân trang -->
+  <div class="row mt-4">
+    <div class="col-md-12 d-flex justify-content-center">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item me-2">
+                <a class="page-link rounded-circle" href="#" aria-label="Previous">
+                  <span aria-hidden="true"><i class="pre fa-solid fa-angle-left"></i></span>
+                </a>
+              </li>
+              <li class="page-item me-2 "><a class="page-link rounded-circle" href="#">1</a></li>
+              <li class="page-item me-2""><a class="page-link rounded-circle" href="#">2</a></li>
+              <li class="page-item me-2""><a class="page-link rounded-circle" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link rounded-circle" href="#" aria-label="Next">
+                  <span aria-hidden="true"><i class="next fa-solid fa-angle-right"></i></span>
+                </a>
+              </li>
+            </ul>
+        </nav>   
+    </div>
+  </div>
 </div>
 
 <!-- ------------------------------------------------------------------------------------------------- -->
     <!-- js bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- js -->
+    <script src="/assets/js/admin/uploadImg.js"></script>
+
     
     
 </body>
