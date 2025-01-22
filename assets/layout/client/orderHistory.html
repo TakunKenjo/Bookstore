@@ -102,8 +102,41 @@
                 </nav>
             </div>
         </div>
+        <!-- Row thanh tìm kiếm -->
+        <div class="row">
+            <div class="col-md-12 d-flex">
+                <form class="d-flex w-100">
+                    <select class="form-select me-2" aria-label="Default select example" style="max-width: 200px;">
+                        <option selected>Chọn trạng thái</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <input type="text" placeholder="Nhập mã hóa đơn..." style="max-width: 440px;" class="form-control me-4" id="">
+                    <!-- div tìm kiếm theo khoảng giá -->
+                    <div class="d-flex justify-content-center text-align-items-center me-4">
+                      <label for="calendarInput" class="me-2 d-flex justify-content-center align-items-center">
+                        Ngày:
+                      </label>
+                      <input type="date" id="calendarInput" style="max-width: 140px;" class="form-control me-2">
+                      <span class="fs-3 me-2">-</span>
+                      <input type="date" id="calendarInput" style="max-width: 140px;" class="form-control me-2">
+                    </div>
+                    <div class="me-2 d-flex justify-content-center text-align-items-center">
+                      <span class="me-2 d-flex justify-content-center align-items-center">Tiền:</span>
+                      <button class="btn me-2 d-flex justify-content-center align-items-center">
+                        <i class="fa-solid fa-arrow-up-wide-short fs-5 "></i>
+                      </button>
+                      <button class="btn me-2 d-flex justify-content-center align-items-center">
+                        <i class="fa-solid fa-arrow-down-wide-short fs-5 "></i>
+                      </button>
+                    </div>
+                    <button class="btn btn-success btn-sm " >Tìm kiếm</button>
+                </form>
+            </div>
+        </div>
         <!-- Row bảng lịch sử mua hàng -->
-        <div class="row pt-4 mt-1">
+        <div class="row pt-2 mt-1">
             <div class="col-md-12">
                 <div class="cart-product pb-2 px-2 border rounded-3 shadow bg-white table-responsive">
                     <table class="table">
