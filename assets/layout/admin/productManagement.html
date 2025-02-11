@@ -174,134 +174,9 @@
     </div>
     <!-- Button thêm sách -->
     <div class="col-md-1 d-flex justify-content-end">
-      <button class="btn btn-success btn-sm" style="width:110px" data-bs-toggle="modal" href="#staticBackdrop" role="button">Thêm mới</button>
+      <button class="btn btn-success btn-sm open_add_form" style="width:110px" data-bs-toggle="modal" href="#staticBackdrop" role="button">Thêm mới</button>
       <!-- Thêm sách mới Modal -->
-      <div class="modal fade" id="staticBackdrop" aria-hidden="true" aria-labelledby="staticBackdropLabel" tabindex="-1">
-        <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm sách mới</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="">
-              <div class="modal-body">
-                <div class="row">
-                  <!-- col hình ảnh -->
-                  <div class="col-md-3">
-                    <div class="row ">
-                      <!-- Khung hình ảnh -->
-                      <div class="col-md-12 text-center">
-                        <div class="border rounded-3 p-4 bg-light" style="height: 300px; display: flex; align-items: center; justify-content: center;">
-                          <img id="previewImage" src="https://via.placeholder.com/150" alt="Preview" style="max-width: 100%; max-height: 100%; display: none;">
-                          <span id="placeholderText" class="text-muted" style="font-size: 1.2rem;">Chưa tải ảnh lên</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row justify-content-center mt-3">
-                      <!-- Nút nhập hình ảnh -->
-                      <div class="col-md-12 text-center">
-                        <label for="uploadImage" class="btn btn-outline-success rounded-pill">
-                          <i class="fa-solid fa-upload"></i> Tải hình ảnh
-                        </label>
-                        <input type="file" id="uploadImage" class="d-none" accept="image/*" onchange="previewFile()">
-                      </div>
-                    </div>
-                  </div>
-                  <!-- col thông tin sách -->
-                  <div class="col-md-9 px-3">
-                      <div class="row mb-3">
-                        <label for="" class="col-sm-2 col-form-label fw-medium">Tên sách</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="" placeholder="Nhập tên sách...">
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <label for="" class="col-sm-2 col-form-label fw-medium">Nhà xuất bản</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="" placeholder="Nhập nhà xuất bản...">
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <div class="col-md-6 d-flex justify-content-between">
-                          <label for="" class="col-form-label fw-medium">Nhà cung cấp</label>
-                          <select class="form-select align-items-end" aria-label="Default select example" style="width: 255px">
-                            <option selected>Chọn nhà cung cấp</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                        </div>
-                        <div class="col-md-6 d-flex justify-content-between">
-                          <label for="" class="col-form-label fw-medium ">Thể loại</label>
-                          <select class="form-select align-items-end" aria-label="Default select example" style="width: 290px">
-                            <option selected>Chọn thể loại</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <div class="col-md-6 d-flex justify-content-between">
-                          <label for="" class="col-form-label fw-medium">Giá bìa</label>
-                          <input type="text" class="form-control" id="" placeholder="Nhập giá bìa (đồng)" style="width: 255px">
-                        </div>
-                        <div class="col-md-6 d-flex justify-content-between">
-                          <label for="" class="col-form-label fw-medium">Trọng lượng</label>
-                          <input type="text" class="form-control" id="" placeholder="Nhập trọng lượng (gam)" style="width: 290px">
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <div class="col-md-6 d-flex justify-content-between">
-                          <label for="" class="col-form-label fw-medium">Năm xuất bản</label>
-                          <input type="text" class="form-control" id="" placeholder="Nhập năm xuất bản..." style="width: 255px">
-                        </div>
-                        <!-- Cột tác giả -->
-                        <div class="col-md-6 d-flex">
-                          <label for="" class="col-form-label fw-medium me-5 pe-2">Tác giả</label>
-                          <!-- Button trigger modal -->
-                          <!-- <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                            Chọn tác giả
-                          </button> -->
-                          <!-- Nút mở modal AuthorPopup -->
-                          <button class="btn btn-outline-success" id="openAuthorModal" type="button">
-                            Chọn tác giả
-                          </button>
-                          <!-- Author Modal -->
-                          <div class="modal fade AuthorModal" id="AuthorModal" aria-hidden="true" aria-labelledby="AuthorModalLabel" tabindex="-2">
-                            <div class="modal-dialog modal-dialog-centered">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="AuthorModalLabel">hohohoho</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                  <p>hohohoho</p>
-                                </div>
-                                <div class="modal-footer">
-                                  <button class="btn btn-success" type="button">oke</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>   
-                      <div class="row mb-3">
-                        <div class="col-md-12 d-flex justify-content-between ">
-                          <label for="" class="col-form-label fw-medium">Mô tả</label>
-                          <textarea class="form-control" aria-label="With textarea" style="width: 675px; max-height: 150px; overflow-y: auto;"></textarea>
-                        </div>
-                      </div>               
-                  </div>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-success">Xác nhận</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
   <!-- row table -->
@@ -453,148 +328,7 @@
                             <img src="/assets/img/edit.png" style="width:20px" alt="">
                           </button>
                           <!-- Modal -->
-                          <div class="modal fade" id="staticBackdropEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelEdit" aria-hidden="true">
-                            <div class="modal-dialog modal-xl">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h1 class="modal-title fs-5" id="staticBackdropLabelEdit">Chỉnh sửa thông tin sách</h1>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <form action="">
-                                  <div class="modal-body">
-                                    <div class="row">
-                                      <!-- col hình ảnh -->
-                                      <div class="col-md-3">
-                                        <div class="row ">
-                                          <!-- Khung hình ảnh -->
-                                          <div class="col-md-12 text-center">
-                                            <div class="border rounded-3 p-4 bg-light" style="height: 300px; display: flex; align-items: center; justify-content: center;">
-                                              <img id="previewImage" src="https://via.placeholder.com/150" alt="Preview" style="max-width: 100%; max-height: 100%; display: none;">
-                                              <span id="placeholderText" class="text-muted" style="font-size: 1.2rem;">Chưa tải ảnh lên</span>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="row justify-content-center mt-3">
-                                          <!-- Nút nhập hình ảnh -->
-                                          <div class="col-md-12 text-center">
-                                            <label for="uploadImage" class="btn btn-outline-success rounded-pill">
-                                              <i class="fa-solid fa-upload"></i> Tải hình ảnh
-                                            </label>
-                                            <input type="file" id="uploadImage" class="d-none" accept="image/*" onchange="previewFile()">
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <!-- col thông tin sách -->
-                                      <div class="col-md-9 px-3">
-                                          <div class="row mb-3">
-                                            <label for="" class=" col-sm-2 col-form-label fw-medium text-start">Tên sách</label>
-                                            <div class="col-sm-10">
-                                              <input type="text" class="form-control" id="" placeholder="Nhập tên sách...">
-                                            </div>
-                                          </div>
-                                          <div class="row mb-3">
-                                            <label for="" class="col-sm-2 col-form-label fw-medium text-start">Nhà xuất bản</label>
-                                            <div class="col-sm-10">
-                                              <input type="text" class="form-control" id="" placeholder="Nhập nhà xuất bản...">
-                                            </div>
-                                          </div>
-                                          <div class="row mb-3">
-                                            <div class="col-md-6 d-flex justify-content-between">
-                                              <label for="" class="col-form-label fw-medium">Nhà cung cấp</label>
-                                              <input type="text" class="form-control disabled" id="" style="width: 255px; background-color: white; color: black" disabled>
-                                            </div>
-                                            <div class="col-md-6 d-flex justify-content-between">
-                                              <label for="" class="col-form-label fw-medium ">Thể loại</label>
-                                              <select class="form-select align-items-end" aria-label="Default select example" style="width: 290px">
-                                                <option selected>Chọn thể loại</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                              </select>
-                                            </div>
-                                          </div>
-                                          <div class="row mb-3">
-                                            <div class="col-md-6 d-flex justify-content-between">
-                                              <label for="" class="col-form-label fw-medium">Giá bìa</label>
-                                              <input type="text" class="form-control" id="" placeholder="Nhập giá bìa (đồng)" style="width: 255px">
-                                            </div>
-                                            <div class="col-md-6 d-flex justify-content-between">
-                                              <label for="" class="col-form-label fw-medium">Trọng lượng</label>
-                                              <input type="text" class="form-control" id="" placeholder="Nhập trọng lượng (gam)" style="width: 290px">
-                                            </div>
-                                          </div>
-                                          <div class="row mb-3">
-                                            <div class="col-md-6 d-flex justify-content-between">
-                                              <label for="" class="col-form-label fw-medium">Năm xuất bản</label>
-                                              <input type="text" class="form-control" id="" placeholder="Nhập năm xuất bản..." style="width: 255px">
-                                            </div>
-                                          <!-- Cột tác giả -->
-                                          <div class="col-md-6 d-flex">
-                                            <label for="" class="col-form-label fw-medium me-5 pe-2">Tác giả</label>
-                                            <!-- Button trigger modal -->
-                                            <!-- <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                                              Chọn tác giả
-                                            </button> -->
-                                            <!-- Nút mở modal AuthorPopup -->
-                                            <button class="btn btn-outline-success" id="openAuthorModal" type="button">
-                                              Chọn tác giả
-                                            </button>
-                                            <!-- Author Modal -->
-                                            <div class="modal fade AuthorModal" id="AuthorModal" aria-hidden="true" aria-labelledby="AuthorModalLabel" tabindex="-2">
-                                              <div class="modal-dialog modal-dialog-centered">
-                                                <div class="modal-content">
-                                                  <div class="modal-header">
-                                                    <h5 class="modal-title" id="AuthorModalLabel">hohohoho</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                  </div>
-                                                  <div class="modal-body">
-                                                    <p>hohohoho</p>
-                                                  </div>
-                                                  <div class="modal-footer">
-                                                    <button class="btn btn-success" type="button">oke</button>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          </div>
-                                          <div class="row mb-3">
-                                            <label for="" class=" col-sm-2 col-form-label fw-medium text-start">Khuyến mãi</label>
-                                            <div class="col-sm-10">
-                                              <select class="form-select col-sm-10" aria-label="Default select example" >
-                                                <option selected>Chọn khuyến mãi</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                              </select>
-                                            </div>
-                                          </div>
-                                          <div class="row mb-3">
-                                            <div class="col-md-12 d-flex justify-content-between ">
-                                              <label for="" class="col-form-label fw-medium">Mô tả</label>
-                                              <textarea class="form-control" aria-label="With textarea" style="width: 675px; max-height: 150px; overflow-y: auto;"></textarea>
-                                            </div>
-                                          </div>
-                                          <div class="row mb-3 d-flex justify-content-center align-items-center">
-                                            <label for="" class="col-sm-2 col-form-label fw-medium text-start">Trạng thái</label>
-                                            <div class="d-flex align-items-center col-sm-10">
-                                              <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
-                                                <label class="form-check-label" for="toggleSwitch">Hoạt động</label>
-                                              </div>
-                                            </div>
-                                          </div>
-                                                      
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-success">Xác nhận</button>
-                                  </div>
-                                </form>
-                              </div>
-                            </div>
-                          </div>
+                          
 
 
                     </td>
@@ -626,8 +360,149 @@
         </nav>   
     </div>
   </div>
-
-
+<!-- Modal form popup -->
+<div class="modal fade" id="staticBackdropEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="productModalLabel">Chỉnh sửa thông tin sách</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="" id="productForm">
+        <div class="modal-body">
+          <div class="row">
+            <!-- col hình ảnh -->
+            <div class="col-md-3">
+              <div class="row ">
+                <!-- Khung hình ảnh -->
+                <div class="col-md-12 text-center">
+                  <div class="border rounded-3 p-4 bg-light" style="height: 300px; display: flex; align-items: center; justify-content: center;">
+                    <img id="previewImage1" src="https://via.placeholder.com/150" alt="Preview" style="max-width: 100%; max-height: 100%; display: none;">
+                    <span id="placeholderText1" class="text-muted" style="font-size: 1.2rem;">Chưa tải ảnh lên</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center mt-3">
+                <!-- Nút nhập hình ảnh -->
+                <div class="col-md-12 text-center">
+                  <label for="uploadImage1" class="btn btn-outline-success rounded-pill">
+                    <i class="fa-solid fa-upload"></i> Tải hình ảnh
+                  </label>
+                  <input type="file" id="uploadImage1" class="d-none" accept="image/*" onchange="previewFileEditProduct()">
+                </div>
+              </div>
+            </div>
+            <!-- col thông tin sách -->
+            <div class="col-md-9 px-3">
+                <div class="row mb-3">
+                  <label for="" class=" col-sm-2 col-form-label fw-medium text-start">Tên sách</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="" placeholder="Nhập tên sách...">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="" class="col-sm-2 col-form-label fw-medium text-start">Nhà xuất bản</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="" placeholder="Nhập nhà xuất bản...">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-md-6 d-flex justify-content-between">
+                    <label for="" class="col-form-label fw-medium">Nhà cung cấp</label>
+                    <input type="text" class="form-control disabled" id="" style="width: 255px; background-color: white; color: black" disabled>
+                  </div>
+                  <div class="col-md-6 d-flex justify-content-between">
+                    <label for="" class="col-form-label fw-medium ">Thể loại</label>
+                    <select class="form-select align-items-end" aria-label="Default select example" style="width: 290px">
+                      <option selected>Chọn thể loại</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-md-6 d-flex justify-content-between">
+                    <label for="" class="col-form-label fw-medium">Giá bìa</label>
+                    <input type="text" class="form-control" id="" placeholder="Nhập giá bìa (đồng)" style="width: 255px">
+                  </div>
+                  <div class="col-md-6 d-flex justify-content-between">
+                    <label for="" class="col-form-label fw-medium">Trọng lượng</label>
+                    <input type="text" class="form-control" id="" placeholder="Nhập trọng lượng (gam)" style="width: 290px">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-md-6 d-flex justify-content-between">
+                    <label for="" class="col-form-label fw-medium">Năm xuất bản</label>
+                    <input type="text" class="form-control" id="" placeholder="Nhập năm xuất bản..." style="width: 255px">
+                  </div>
+                <!-- Cột tác giả -->
+                <div class="col-md-6 d-flex">
+                  <label for="" class="col-form-label fw-medium me-5 pe-2">Tác giả</label>
+                  <!-- Button trigger modal -->
+                  <!-- <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                    Chọn tác giả
+                  </button> -->
+                  <!-- Nút mở modal AuthorPopup -->
+                  <button class="btn btn-outline-success" id="openAuthorModal" type="button">
+                    Chọn tác giả
+                  </button>
+                  <!-- Author Modal -->
+                  <div class="modal fade AuthorModal" id="AuthorModal" aria-hidden="true" aria-labelledby="AuthorModalLabel" tabindex="-2">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="AuthorModalLabel">hohohoho</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <p>hohohoho</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button class="btn btn-success" type="button">oke</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="row mb-3 edit">
+                  <label for="" class=" col-sm-2 col-form-label fw-medium text-start">Khuyến mãi</label>
+                  <div class="col-sm-10">
+                    <select class="form-select col-sm-10" aria-label="Default select example" >
+                      <option selected>Chọn khuyến mãi</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-md-12 d-flex justify-content-between ">
+                    <label for="" class="col-form-label fw-medium">Mô tả</label>
+                    <textarea class="form-control" aria-label="With textarea" style="width: 675px; max-height: 150px; overflow-y: auto;"></textarea>
+                  </div>
+                </div>
+                <div class="row mb-3 d-flex justify-content-center align-items-center edit">
+                  <label for="" class="col-sm-2 col-form-label fw-medium text-start">Trạng thái</label>
+                  <div class="d-flex align-items-center col-sm-10">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" id="toggleSwitch" checked>
+                      <label class="form-check-label" for="toggleSwitch">Hoạt động</label>
+                    </div>
+                  </div>
+                </div>
+                            
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success" id="submit_btn">Xác nhận</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
   
 </div>
 
@@ -635,7 +510,7 @@
     <!-- js bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- js -->
-    <script src="/assets/js/admin/uploadImg.js"></script>
+    <script src="/assets/js/admin/productManagement.js"></script>
 
     <script src="/assets/js/admin/admin.js"></script>
     
