@@ -91,7 +91,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link  d-flex align-items-center" aria-current="page" href="/assets/layout/admin/importProduct.html">
+              <a class="nav-link active d-flex align-items-center" aria-current="page" href="/assets/layout/admin/importProduct.html">
                 <img src="/assets/img/transport.png" alt="">
                 <span class="ms-3 fs-5">Quản lý phiếu nhập</span>
               </a>
@@ -103,7 +103,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active  d-flex align-items-center" aria-current="page" href="/assets/layout/admin/orderManagement.html">
+              <a class="nav-link d-flex align-items-center" aria-current="page" href="/assets/layout/admin/orderManagement.html">
                 <img src="/assets/img/order.png" alt="">
                 <span class="ms-3 fs-5">Quản lý đơn hàng</span>
               </a>
@@ -138,13 +138,13 @@
   <!-- row Panel -->
   <div class="row pb-4">
     <h4>
-        Quản lý đơn hàng
+        Quản lý phiếu nhập
     </h4>
   </div>
   <!-- row filter, button thêm sách -->
   <div class="row py-3 px-1 mb-2">
     <!-- Form tìm kiếm -->
-    <div class="col-md-12 d-flex">
+    <div class="col-md-11 d-flex">
         <form class="d-flex w-100">
             <select class="form-select me-2" aria-label="Default select example" style="max-width: 232px;">
                 <option selected>Chọn trạng thái</option>
@@ -152,7 +152,7 @@
                 <option value="2">Two</option>
                 <option value="3">Three</option>
             </select>
-            <input type="text" placeholder="Nhập mã đơn hàng..." style="max-width: 400px;" class="form-control me-4" id="">
+            <input type="text" placeholder="Nhập mã phiếu nhập..." style="max-width: 290px;" class="form-control me-4" id="">
             <!-- div tìm kiếm theo khoảng giá -->
             <div class="d-flex justify-content-center text-align-items-center me-4">
               <label for="calendarInput" class="me-2 d-flex justify-content-center align-items-center">
@@ -174,6 +174,44 @@
             <button class="btn btn-success btn-sm " >Tìm kiếm</button>
         </form>
     </div>
+        <!-- Button thêm phiếu nhập -->
+        <div class="col-md-1 d-flex justify-content-end">
+          <button class="btn btn-success btn-sm" style="width:110px" data-bs-toggle="modal" href="#staticBackdrop" role="button">Thêm mới</button>
+          <!-- Thêm sách mới Modal -->
+          <div class="modal fade" id="staticBackdrop" aria-hidden="true" aria-labelledby="staticBackdropLabel" tabindex="-1">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm phiếu nhập </h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="">
+                  <div class="modal-body">
+                    <!-- Row phiếu nhập -->
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="row mb-3">
+                          <div class="col-md-6 d-flex justify-content-between">
+                            <label for="" class="col-form-label fw-medium">Tên nhà cung cấp</label>
+                            <input type="text" class="form-control" id="" placeholder="Nhập giá bìa (đồng)" style="width: 400px">
+                          </div>
+                          <div class="col-md-6 d-flex justify-content-between">
+                            <label for="" class="col-form-label fw-medium">Chiết khấu(%)</label>
+                            <input type="text" class="form-control" id="" placeholder="Nhập trọng lượng (gam)" style="width: 400px">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Row thêm sản phẩm vào phiếu nhập -->
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-success">Xác nhận</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
   </div>
   <!-- row table -->
   <div class="row">
@@ -182,7 +220,7 @@
         <table class="table table-hover">
             <thead class="text-center">
               <tr>
-                <th scope="col">Mã đơn hàng</th>
+                <th scope="col">Mã phiếu nhập</th>
                 <th scope="col">Ngày tạo</th>
                 <th scope="col">Ngày cập nhật</th>
                 <th scope="col">Tổng tiền</th>
