@@ -53,13 +53,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link  d-flex align-items-center" aria-current="page" href="#">
+              <a class="nav-link  d-flex align-items-center" aria-current="page" href="/assets/layout/admin/stationeryManagement.html">
                 <img src="/assets/img/stationery.png" alt="">
                 <span class="ms-3 fs-5">Quản lý văn phòng phẩm</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link  d-flex align-items-center" aria-current="page" href="#">
+              <a class="nav-link active d-flex align-items-center" aria-current="page" href="/assets/layout/admin/typeStationery.html">
                 <img src="/assets/img/stationeryType.png" alt="">
                 <span class="ms-3 fs-5">Quản lý loại văn phòng phẩm</span>
               </a>
@@ -71,7 +71,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link  d-flex align-items-center" aria-current="page" href="/assets/layout/admin/catalog.html">
+              <a class="nav-link d-flex align-items-center" aria-current="page" href="/assets/layout/admin/catalog.html">
                 <img src="/assets/img/list.png" alt="">
                 <span class="ms-3 fs-5">Quản lý danh mục</span>
               </a>
@@ -101,19 +101,19 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link  d-flex align-items-center" aria-current="page" href="#">
+              <a class="nav-link  d-flex align-items-center" aria-current="page" href="/assets/layout/admin/orderManagement.html">
                 <img src="/assets/img/order.png" alt="">
                 <span class="ms-3 fs-5">Quản lý đơn hàng</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link   d-flex align-items-center" aria-current="page" href="/assets/layout/admin/account.html">
+              <a class="nav-link  d-flex align-items-center" aria-current="page" href="/assets/layout/admin/account.html">
                 <img src="/assets/img/account.png" alt="">
                 <span class="ms-3 fs-5">Quản lý tài khoản</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active  d-flex align-items-center" aria-current="page" href="#">
+              <a class="nav-link  d-flex align-items-center" aria-current="page" href="#">
                 <img src="/assets/img/rule.png" alt="">
                 <span class="ms-3 fs-5">Quản lý nhóm quyền</span>
               </a>
@@ -136,89 +136,51 @@
   <!-- row Panel -->
   <div class="row pb-4">
     <h4>
-        Quản lý tài khoản
+        Quản lý loại văn phòng phẩm
     </h4>
   </div>
-  <!-- row filter, button thêm sách -->
+  <!-- row search, button thêm danh mục -->
   <div class="row py-3 px-1 mb-2">
     <!-- Form tìm kiếm -->
     <div class="col-md-11 d-flex">
       <form class="d-flex w-100">
-          <select class="form-select me-2" aria-label="Default select example" style="max-width: 200px;">
-              <option selected>Tất cả nhóm quyền</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-          </select>
-          <select class="form-select me-2" aria-label="Default select example" style="max-width: 200px;">
-              <option selected>Tất cả trạng thái</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-          </select>
-          <input type="text" placeholder="Nhập mã, tên người dùng..." style="max-width: 660px;" class="form-control me-4" id="">
-
+          <input type="text" placeholder="Nhập mã, loại văn phòng phẩm..." style="max-width: 1080px;" class="form-control me-4" id="">
           <button class="btn btn-success btn-sm " >Tìm kiếm</button>
       </form>
     </div>
     <!-- Button thêm sách -->
     <div class="col-md-1 d-flex justify-content-end">
-      <button class="btn btn-success btn-sm" style="width:110px" data-bs-toggle="modal" href="#staticBackdrop" role="button">Thêm mới</button>
-      <!-- Thêm sách mới Modal -->
-      <div class="modal fade" id="staticBackdrop" aria-hidden="true" aria-labelledby="staticBackdropLabel" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+      <!-- Button trigger modal -->
+      <button style="width:110px" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropTypeStationery">
+        Thêm mới
+      </button>
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdropTypeStationery" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelTypeStationery" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm sách mới</h1>
+              <h1 class="modal-title fs-5" id="staticBackdropLabelTypeStationery">Thêm loại văn phòng phẩm</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="">
-                <div class="modal-body">
-                  <div class="row mb-3">
-                      <label for="" class=" col-sm-3 col-form-label fw-medium text-start">Họ và tên</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="">
-                      </div>
-                  </div>
-                  <div class="row mb-3">
-                      <label for="calendarInput" class="col-sm-3 text-start form-label fw-medium">Email</label>
-                      <div class="col-sm-9">
-                        <input type="email" class="form-control" id="">
-                      </div>
-                  </div>
-                  <div class="row mb-3">
-                      <label for="calendarInput" class="col-sm-3 text-start form-label fw-medium">Mật khẩu</label>
-                      <div class="col-sm-9">
-                        <input type="password" class="form-control" id="">
-                      </div>
-                  </div>
-                  <div class="row mb-3">
-                      <label for="calendarInput" class="col-sm-3 text-start form-label fw-medium">Số điện thoại</label>
-                      <div class="col-sm-9">
-                        <input type="text" class="form-control" id="">
-                      </div>
-                  </div>
-                  <div class="row mb-3">
-                      <label for="calendarInput" class="col-sm-3 text-start form-label fw-medium">Quyền</label>
-                      <div class="col-sm-9">
-                        <select class="form-select align-items-end" aria-label="Default select example" style="width: 255px">
-                            <option selected>Chọn quyền</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                      </div>
-                  </div>
+              <div class="modal-body">
+                <div class="row">
+                    <div class="mb-3">
+                        <label for="" class="form-label fw-medium">Tên loại văn phòng phẩm</label>
+                        <input type="text" class="form-control" id="" aria-describedby="">
+                    </div>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-success">Xác nhận</button>
-                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success">Xác nhận</button>
+              </div>
             </form>
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <!-- row table -->
   <div class="row">
     <div class="col-md-12">
@@ -226,37 +188,21 @@
         <table class="table table-hover">
             <thead class="text-center">
               <tr>
-                <th scope="col">Mã tài khoản</th>
-                <th scope="col">Tên tài khoản</th>
-                <th scope="col">Email</th>
-                <th scope="col">Số điện thoại</th>
-                <th scope="col">Quyền</th>
+                <th scope="col">Mã danh mục</th>
+                <th scope="col">Tên danh mục</th>
                 <th scope="col">Trạng thái</th>
                 <th scope="col">Tùy chỉnh</th>
-
               </tr>
             </thead>
             <tbody  class="table-group-divider">
                 <tr>
-                  <!-- Mã tài khoản -->
+                  <!-- Mã danh mục -->
                     <td class="align-middle text-center" scope="row">
-                        TK001
+                        LVPP001
                     </td>
-                  <!-- Tên tài khoản -->
-                    <td class=" text-center align-middle" scope="row">
-                        Ngô Đức Trọng
-                    </td>
-                  <!-- Email -->
-                    <td class=" align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
-                        takunnd0209@gmail.com  
-                    </td>
-                  <!--sdt-->
-                    <td class="align-middle text-center">
-                        0256592224
-                    </td> 
-                  <!-- Quyền -->
-                    <td class="align-middle text-center ">
-                        Chủ doanh nghiệp
+                  <!-- Tên danh mục -->
+                    <td class="  align-middle text-center" style="max-width: 150px; word-wrap: break-word;">
+                        Bút bi
                     </td>
                   <!-- Trạng thái -->
                     <td class=" align-middle text-center text-success fw-bold">
@@ -266,55 +212,26 @@
                     <td class="align-middle text-center">
                         <!-- Button chỉnh sửa -->
                           <!-- Button trigger modal -->
-                          <button class="btn" fdprocessedid="r9x0b9" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropEditAccount">
+                          <button class="btn" fdprocessedid="r9x0b9" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropEditTypeStationery">
                             <img src="/assets/img/edit.png" style="width:20px" alt="">
                           </button>
                           <!-- Modal -->
-                          <div class="modal fade" id="staticBackdropEditAccount" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelEditAccount" aria-hidden="true">
+                          <div class="modal fade" id="staticBackdropEditTypeStationery" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelEditTypeStationery" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-lg">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h1 class="modal-title fs-5" id="staticBackdropLabelEditAccount">Chỉnh sửa thông tin tài khoản</h1>
+                                  <h1 class="modal-title fs-5" id="staticBackdropLabelEditTypeStationery">Chỉnh sửa thông tin loại văn phòng phẩm</h1>
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <form action="">
-                                    <div class="modal-body">
-                                      <div class="row mb-3">
-                                          <label for="" class=" col-sm-3 col-form-label fw-medium text-start">Họ và tên</label>
-                                          <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="">
-                                          </div>
-                                      </div>
-                                      <div class="row mb-3">
-                                          <label for="calendarInput" class="col-sm-3 text-start form-label fw-medium">Email</label>
-                                          <div class="col-sm-9">
-                                            <input type="email" class="form-control" id="">
-                                          </div>
-                                      </div>
-                                      <div class="row mb-3">
-                                          <label for="calendarInput" class="col-sm-3 text-start form-label fw-medium">Mật khẩu</label>
-                                          <div class="col-sm-9">
-                                            <input type="password" class="form-control disabled" id="" style="background-color:white; color: black" disabled>
-                                          </div>
-                                      </div>
-                                      <div class="row mb-3">
-                                          <label for="calendarInput" class="col-sm-3 text-start form-label fw-medium">Số điện thoại</label>
-                                          <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="">
-                                          </div>
-                                      </div>
-                                      <div class="row mb-3">
-                                          <label for="calendarInput" class="col-sm-3 text-start form-label fw-medium">Quyền</label>
-                                          <div class="col-sm-9">
-                                            <select class="form-select align-items-end" aria-label="Default select example" style="width: 255px">
-                                                <option selected>Chọn quyền</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </select>
-                                          </div>
-                                      </div>
-                                      <div class="row mb-3 d-flex justify-content-center align-items-center">
+                                  <div class="modal-body">
+                                    <div class="row mb-3">
+                                        <label for="" class=" col-sm-3 col-form-label fw-medium text-start">Loại văn phòng phẩm</label>
+                                        <div class="col-sm-9">
+                                          <input type="text" class="form-control" id="">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3 d-flex justify-content-center align-items-center">
                                         <label for="" class="col-sm-3 col-form-label fw-medium text-start">Trạng thái</label>
                                         <div class="d-flex align-items-center col-sm-9">
                                           <div class="form-check form-switch">
@@ -322,11 +239,11 @@
                                             <label class="form-check-label" for="toggleSwitch">Hoạt động</label>
                                           </div>
                                         </div>
-                                      </div>
                                     </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-success">Xác nhận</button>
-                                    </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-success">Xác nhận</button>
+                                  </div>
                                 </form>
                               </div>
                             </div>
@@ -362,9 +279,6 @@
         </nav>   
     </div>
   </div>
-
-
-  
 </div>
 
 <!-- ------------------------------------------------------------------------------------------------- -->
@@ -373,7 +287,6 @@
     <!-- js -->
     <script src="/assets/js/admin/uploadImg.js"></script>
 
-    <script src="/assets/js/admin/admin.js"></script>
     
     
 </body>

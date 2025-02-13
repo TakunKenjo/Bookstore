@@ -32,19 +32,31 @@ function previewFileEditProduct() {
     }
   }
 
+// Hiển thị modal chọn tác giả
 document.getElementById('openAuthorModal').addEventListener('click', function (e) {
   const AuthorModal = new bootstrap.Modal(document.getElementById('AuthorModal'));
-  AuthorModal.show(); // Hiển thị modal chọn tác giả
+  AuthorModal.show(); 
+});
+
+
+// reload lại form 
+document.getElementById('staticBackdropEdit').addEventListener('hidden.bs.modal', function () {
+    document.getElementById('productForm').reset();
+    let textMessage = document.querySelectorAll('.text-message');
+    textMessage.forEach(element => {
+        element.textContent = '';
+    });
+    location.reload();
 });
   
-  $(document).ready(function () {
+$(document).ready(function () {
     var authors = [];
 
     // TẢI HÌNH ẢNH
     // $('#upload-img').on('change', function (event) {
     //     let url = URL.createObjectURL(event.target.files[0]);
     //     $('#img-preview').attr('src', url);
-    // });
+    // });      
 
     const modalTitle = document.getElementById('productModalLabel');
     const modalSaveBtn = document.getElementById('saveModalBtn');
@@ -52,78 +64,77 @@ document.getElementById('openAuthorModal').addEventListener('click', function (e
 
     $('.open_add_form').on('click', function () {
         modalTitle.textContent = 'Thêm sản phẩm';
-        modalSaveBtn.textContent = 'Thêm sản phẩm';
         submit_btn.setAttribute('name', 'action');
         submit_btn.setAttribute('value', 'submit_btn_add');
         document.getElementById('productForm').querySelectorAll('.edit').forEach(element => {
-            element.style.display = 'none';
+            console.log("Ẩn phần tử:", element);
+            element.style.display =     'none';
         });
     });
 
     $('.open_edit_form').on('click', function () {
         modalTitle.textContent = 'Chỉnh sửa sản phẩm';
-        modalSaveBtn.textContent = 'Lưu thay đổi';
         submit_btn.setAttribute('name', 'action');
         submit_btn.setAttribute('value', 'submit_btn_update');
         let product_id = $(this).closest('tr').find('.product_id').text();
         console.log('hello');
-        $.ajax({
-            url: "../controller/quantri/ProductController.php",
-            type: "POST",
-            data: {
-                'action': 'edit_data',
-                'product_id': product_id
-            },
-            success: function (response) {
-                console.log(response);
-                const obj= JSON.parse(response);
-                if (obj.status == "success") {
-                    data = obj.data;
-                    $('#productForm input[name="product-id"]').val(data.idSach);
-                    $('#img-preview').prop('src', `../asset/uploads/${data.hinhanh}`);
-                    $('#productForm input[name="product-name"]').val(data.tuasach);
-                    $('#productForm input[name="product-publisher"]').val(data.NXB);
-                    $('#productForm select[name="product-supplier"]').hide();
-                    $('#tenncc').html(data.tenNCC);
-                    $('#productForm input[name="idNCC"]').val(data.idNCC);
-                    $('#productForm select[name="product-category"]').val(data.idTL);
-                    $('#productForm input[name="product-original-price"]').val(data.giabia);
-                    $('#productForm input[name="product-sale-price"]').val(data.giaban);
-                    $('#productForm input[name="product-publish-year"]').val(parseInt(data.namXB));
-                    $('#productForm input[name="product-weight"]').val(data.trongluong);
-                    // append discount
-                    $('#productForm select[name="product-discount"]').html('');
-                    // dang dien ra
-                    let option = '';
-                    let discountSelected = obj.discountSelected;
-                    let discounts = obj.discounts;
-                    if(data.giaban != data.giabia){
-                        option += '<option value="'+discountSelected['idMGG']+'">'+discountSelected['phantram']+'</option>';
-                    }
-                    else{
-                        option+= '<option value="">Chọn mã giảm giá</option>';
-                        for(let i=0; i<discounts.length; i++)
-                            option+='<option value="'+discounts[i]['idMGG']+'">'+discounts[i]['phantram']+'% (từ '+discounts[i]['ngaybatdau']+' đến '+discounts[i]['ngayketthuc']+')'+'</option>';
-                    }
-                    $('#productForm select[name="product-discount"]').html(option);
+        // $.ajax({
+        //     url: "../controller/quantri/ProductController.php",
+        //     type: "POST",
+        //     data: {
+        //         'action': 'edit_data',
+        //         'product_id': product_id
+        //     },
+        //     success: function (response) {
+        //         console.log(response);
+        //         const obj= JSON.parse(response);
+        //         if (obj.status == "success") {
+        //             data = obj.data;
+        //             $('#productForm input[name="product-id"]').val(data.idSach);
+        //             $('#img-preview').prop('src', `../asset/uploads/${data.hinhanh}`);
+        //             $('#productForm input[name="product-name"]').val(data.tuasach);
+        //             $('#productForm input[name="product-publisher"]').val(data.NXB);
+        //             $('#productForm select[name="product-supplier"]').hide();
+        //             $('#tenncc').html(data.tenNCC);
+        //             $('#productForm input[name="idNCC"]').val(data.idNCC);
+        //             $('#productForm select[name="product-category"]').val(data.idTL);
+        //             $('#productForm input[name="product-original-price"]').val(data.giabia);
+        //             $('#productForm input[name="product-sale-price"]').val(data.giaban);
+        //             $('#productForm input[name="product-publish-year"]').val(parseInt(data.namXB));
+        //             $('#productForm input[name="product-weight"]').val(data.trongluong);
+        //             // append discount
+        //             $('#productForm select[name="product-discount"]').html('');
+        //             // dang dien ra
+        //             let option = '';
+        //             let discountSelected = obj.discountSelected;
+        //             let discounts = obj.discounts;
+        //             if(data.giaban != data.giabia){
+        //                 option += '<option value="'+discountSelected['idMGG']+'">'+discountSelected['phantram']+'</option>';
+        //             }
+        //             else{
+        //                 option+= '<option value="">Chọn mã giảm giá</option>';
+        //                 for(let i=0; i<discounts.length; i++)
+        //                     option+='<option value="'+discounts[i]['idMGG']+'">'+discounts[i]['phantram']+'% (từ '+discounts[i]['ngaybatdau']+' đến '+discounts[i]['ngayketthuc']+')'+'</option>';
+        //             }
+        //             $('#productForm select[name="product-discount"]').html(option);
                     
-                    $('#productForm select[name="product-discount"]').val(data.idMGG === null ? "" : data.idMGG);
-                    $('#productForm textarea[name="product-description"]').val(data.mota);
-                    $('#status').prop('checked', data.trangthai == 1 ? true : false);
-                    $('label[for="status"]').text(data.trangthai == 1 ? "Đang bán" : "Bị ẩn");
-                    console.log(data.authors);
-                    data.authors.forEach(author => {
-                        authors.push(author.idTG);
-                    });
+        //             $('#productForm select[name="product-discount"]').val(data.idMGG === null ? "" : data.idMGG);
+        //             $('#productForm textarea[name="product-description"]').val(data.mota);
+        //             $('#status').prop('checked', data.trangthai == 1 ? true : false);
+        //             $('label[for="status"]').text(data.trangthai == 1 ? "Đang bán" : "Bị ẩn");
+        //             console.log(data.authors);
+        //             data.authors.forEach(author => {
+        //                 authors.push(author.idTG);
+        //             });
 
-                    $('.select-author-checkbox').each(function () {
-                        if (authors.includes(parseInt($(this).val()))) {
-                            $(this).prop('checked', true);
-                        }
-                    });
-                }
-            }
-        });
+        //             $('.select-author-checkbox').each(function () {
+        //                 if (authors.includes(parseInt($(this).val()))) {
+        //                     $(this).prop('checked', true);
+        //                 }
+        //             });
+        //         }
+        //     }
+        // });
     });
 
     $(document).on('click', '#saveSubModalBtn', function () {

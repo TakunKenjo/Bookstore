@@ -53,13 +53,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link  d-flex align-items-center" aria-current="page" href="#">
+              <a class="nav-link  d-flex align-items-center" aria-current="page" href="/assets/layout/admin/stationeryManagement.html">
                 <img src="/assets/img/stationery.png" alt="">
                 <span class="ms-3 fs-5">Quản lý văn phòng phẩm</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link  d-flex align-items-center" aria-current="page" href="#">
+              <a class="nav-link  d-flex align-items-center" aria-current="page" href="/assets/layout/admin/typeStationery.html">
                 <img src="/assets/img/stationeryType.png" alt="">
                 <span class="ms-3 fs-5">Quản lý loại văn phòng phẩm</span>
               </a>
@@ -101,7 +101,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link  d-flex align-items-center" aria-current="page" href="#">
+              <a class="nav-link  d-flex align-items-center" aria-current="page" href="/assets/layout/admin/orderManagement.html">
                 <img src="/assets/img/order.png" alt="">
                 <span class="ms-3 fs-5">Quản lý đơn hàng</span>
               </a>
@@ -205,6 +205,14 @@
                         </div>
                       </div>
                       <div class="row mb-3">
+                        <label for="" class="col-sm-2 col-form-label fw-medium">Phân loại</label>
+                        <div class="col-sm-10">
+                          <select name="supplier_city" id="supplier-city" class="form-select">
+                            <option value="-1">Chọn loại</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
                         <div class="col-md-4">
                             <label for="supplier-city" class="form-label fw-medium">Tỉnh/thành</label>
                             <select name="supplier_city" id="supplier-city" class="form-select">
@@ -243,7 +251,7 @@
         <table class="table table-hover">
             <thead class="text-center">
               <tr>
-                <th scope="col">Mã nhà cung câp</th>
+                <th scope="col">Mã nhà cung cấp</th>
                 <th scope="col">Tên nhà cung cấp</th>
                 <th scope="col">Email</th>
                 <th scope="col">Số điện thoại</th>
@@ -318,6 +326,12 @@
                                               </div>
                                             </div>
                                             <div class="row mb-3">
+                                              <label for="" class="col-sm-2 col-form-label fw-medium text-start">Phân loại</label>
+                                              <div class="col-sm-10">
+                                                <input type="text" class="form-control disabled"  id="" disabled style="background-color:white; color: black">
+                                              </div>
+                                            </div>
+                                            <div class="row mb-3">
                                               <div class="col-md-4 d-flex flex-column align-items-start">
                                                   <label for="supplier-city" class="form-label fw-medium ">Tỉnh/thành</label>
                                                   <input type="text" class="form-control disabled"  id="" disabled style="background-color:white; color: black">
@@ -354,7 +368,7 @@
                             <div class="modal-dialog modal-lg modal-dialog-centered">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h1 class="modal-title fs-5" id="staticBackdropLabelSupplier">Thêm nhà cung cấp </h1>
+                                  <h1 class="modal-title fs-5" id="staticBackdropLabelSupplier">Chỉnh sửa nhà cung cấp </h1>
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <form action="">
@@ -384,6 +398,14 @@
                                             <label for="" class="col-sm-2 col-form-label fw-medium text-start">Địa chỉ</label>
                                             <div class="col-sm-10">
                                               <input type="text" class="form-control" id="" placeholder="Nhập số nhà, tên đường...">
+                                            </div>
+                                          </div>
+                                          <div class="row mb-3">
+                                            <label for="" class="col-sm-2 col-form-label fw-medium text-start">Phân loại</label>
+                                            <div class="col-sm-10">
+                                              <select name="supplier_city" id="supplier-city" class="form-select">
+                                                <option value="-1">Chọn loại</option>
+                                              </select>
                                             </div>
                                           </div>
                                           <div class="row mb-3">
