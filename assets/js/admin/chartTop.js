@@ -22,3 +22,4 @@ const config = {
     },
   };
 new Chart(ctxtop, config);
+
